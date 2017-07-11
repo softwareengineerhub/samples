@@ -10,7 +10,6 @@ import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 import javax.jms.Message;
 import javax.jms.MessageConsumer;
-import javax.jms.MessageProducer;
 import javax.jms.Session;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
@@ -19,7 +18,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
  * @author denys
  */
 public class Consumer {
-    
+
     public static void main(String[] args) throws Exception {
         ConnectionFactory cf = new ActiveMQConnectionFactory("tcp://localhost:61616");
         //Connection connection = cf.createConnection("user", "password");
@@ -28,10 +27,10 @@ public class Consumer {
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         Destination destination = session.createQueue("queue1");
         MessageConsumer messageConsumer = session.createConsumer(destination);
-        while(true){
-            Message msg = messageConsumer.receive();        
+        while (true) {
+            Message msg = messageConsumer.receive();
             System.out.println(msg);
         }
     }
-    
+
 }
