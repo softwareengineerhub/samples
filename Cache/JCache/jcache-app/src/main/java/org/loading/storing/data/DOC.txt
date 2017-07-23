@@ -1,0 +1,2 @@
+Expiration - when data could be removed from cache
+Eviction - The process of removing entries from a Cache when the Cache has exceeded a resource limit
