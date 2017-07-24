@@ -1,1 +1,6 @@
 /Cache/JCache/jcache-app/target
+/Cache/JCache/CacheAnotations/target
+/Cache/JCache/CacheAnotations/nb-configuration.xml
+/JMS/ActiveMQ/activemq-spring-example/target
+/JMS/ActiveMQ/standalone-example/target
+/JMS/ActiveMQ/activemq-spring-example/nb-configuration.xml
