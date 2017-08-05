@@ -4,3 +4,7 @@
 /JMS/ActiveMQ/activemq-spring-example/target
 /JMS/ActiveMQ/standalone-example/target
 /JMS/ActiveMQ/activemq-spring-example/nb-configuration.xml
+/Spring/1. Core/core-no-spring/target/
+/Spring/1. Core/core-xml-configuration/target/
+/Spring/1. Core/core-annotation-configuration/target
+/Spring/1. Core/core-java-configuration/target/
