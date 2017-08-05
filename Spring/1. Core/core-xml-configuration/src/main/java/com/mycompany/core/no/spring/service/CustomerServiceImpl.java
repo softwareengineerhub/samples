@@ -7,7 +7,6 @@ package com.mycompany.core.no.spring.service;
 
 import com.mycompany.core.no.spring.model.Customer;
 import com.mycompany.core.no.spring.repository.CustomerRepository;
-import com.mycompany.core.no.spring.repository.JPACustomerRepositoryImpl;
 import java.util.List;
 
 /**
@@ -16,10 +15,23 @@ import java.util.List;
  */
 public class CustomerServiceImpl implements CustomerService {
 
-    private CustomerRepository customerRepository = new JPACustomerRepositoryImpl();
+    private CustomerRepository customerRepository;
 
+    public CustomerServiceImpl(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
+
+    public CustomerServiceImpl() {
+
+    }
+
+    @Override
     public List<Customer> findAll() {
         return customerRepository.findAll();
+    }
+
+    public void setCustomerRepository(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
     }
 
 }
