@@ -9,6 +9,13 @@
         </action>
         <action name="enter-protein" class="com.simpleprogrammer.actions.EnterProtein">
             <result name="success">/enter-protein.jsp</result>
-        </action>
+        </action>        
+        <action name="chain-action" class="com.simpleprogrammer.actions.ChainAction">
+            <result name="success">/chain-action.jsp</result>
+            <result name="do-next-action" type="chain">chain-action1</result>
+        </action>        
+        <action name="chain-action1" class="com.simpleprogrammer.actions.ChainAction1">
+            <result name="success">/chain-action1.jsp</result>
+        </action>        
     </package>
 </struts>
