@@ -1,0 +1,8 @@
+Average Movie Rating per Genre
+
+
+1. Creates DataSet of Movies from CSV
+2. Creates DataSet of Ratings from CSV
+3. Joins two datasets based on movieId field:
+movies.join(ratings).where(0).equalTo(0);
+4. Join Result Function:
