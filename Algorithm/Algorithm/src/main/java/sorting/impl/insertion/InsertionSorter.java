@@ -17,7 +17,7 @@ public class InsertionSorter implements Sorter {
     public void sort(int[] data) {
         for(int i=0;i<data.length;i++){
             int k=i;
-            while(){
+            while(k>0){
                 
             }
         }
