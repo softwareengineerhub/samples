@@ -1,0 +1,13 @@
+Optional if present almost same as null check.
+
+The key to using Optional effectively is to use a method that either consumes the correct value or produces an alternative.
+There is a second form of the ifPresent method that accepts a function
+optionalValue.ifPresent(v -> Process v);
+
+This is pretty same as Stream.map
+
+If there is no value in optional 
+
+1. Just set default value: largest.orElse(0);
+2. Calculate some value:  largest.orElseGet(() -> 0);
+3. Throw an Exception: largest.orElseThrow(new Supplier<NoSuchElementException>();

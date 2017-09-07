@@ -1,0 +1,29 @@
+Differences between collections and streams:
+1. Stream does not store its elements.
+They may be stored in an underlying collection or generated on demand
+2. Stream operations don't mutate their source. 
+Instead, they return new streams that hold the result
+3. Stream operations are lazy when possible.
+This means they are not executed until their result is needed.
+For example, if you only ask for the first five long words instead of counting them all,
+then the filter method will stop filtering after the fifth match. 
+As a consequence, you can even have infinite streams.
+
+
+Looping collection is hard to parallelize.
+Streams follow what, not how principals
+
+
+When you work with streams, you set up a pipeline of operations in three stages:
+1. You create stream
+2. You specify intermediate operations for transforming the initial stream into others,
+in one or more steps.
+3. You apply a terminal operation to produce a result. 
+This operation forces the execution of the lazy operations that precede it.
+Afterwards, the stream can no longer be used 
+
+
+Note:
+Stream operations are not executed on the elements in the order in which they are invoked on the streams.
+long count = words.parallelStream().filter(w -> w.length() > 12).count();
+When count method asks for the first element, then the filter method starts requesting elements, until it finds one that has length > 12
