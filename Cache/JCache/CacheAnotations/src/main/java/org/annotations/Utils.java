@@ -5,13 +5,14 @@
  */
 package org.annotations;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 
 /**
  *
  * @author denys
  */
-@RequestScoped
+@ApplicationScoped
 public class Utils {
  
     public void method(){
