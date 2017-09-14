@@ -13,6 +13,7 @@ public class Node {
 
     private Object value;
     private Node next;
+    private Node prev;
 
     public Object getValue() {
         return value;
@@ -28,6 +29,14 @@ public class Node {
 
     public void setNext(Node next) {
         this.next = next;
+    }
+
+    public Node getPrev() {
+        return prev;
+    }
+
+    public void setPrev(Node prev) {
+        this.prev = prev;
     }
 
 }
