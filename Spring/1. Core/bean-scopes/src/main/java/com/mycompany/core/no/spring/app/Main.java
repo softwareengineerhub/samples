@@ -9,7 +9,6 @@ import com.mycompany.core.no.spring.model.Customer;
 import com.mycompany.core.no.spring.model.Dog;
 import com.mycompany.core.no.spring.model.Employee;
 import com.mycompany.core.no.spring.model.Person;
-import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
