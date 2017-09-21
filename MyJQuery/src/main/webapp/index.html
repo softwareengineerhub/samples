@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <br>
+        <input type="text" id="campaignCreate_campaign_cashAmount_formatted" name="campaignCreate_campaign_cashAmount_formatted" value=""/>
+        <textarea id="availableCurrenciesCash">            
+        </textarea>
+
+        <br><br><br>       
+
+        <select name="campaignCreate_campaign_availableCurrencies" id="campaignCreate_campaign_availableCurrencies">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="SEK">SEK</option>
+            <option value="NOK">NOK</option>
+        </select>
+
+        <script>
+            var currencyNames = [];
+            var currencyMultipliers = [];
+            var currencyValues = [];
+
+            $("#campaignCreate_campaign_cashAmount_formatted").change(function () {
+                var value = this.value;
+                var j = 0;
+                var currencyText = "";
+                $("#campaignCreate_campaign_availableCurrencies option").each(function () {
+                    currencyNames[j] = $(this).text();
+                    if (currencyNames[j] === "SEK") {
+                        currencyMultipliers[j] = 10;
+                    } else if (currencyNames[j] === "NOK") {
+                        currencyMultipliers[j] = 20;
+                    } else {
+                        currencyMultipliers[j] = 1;
+                    }
+                    currencyValues[j] = value * currencyMultipliers[j];
+                    currencyText += currencyNames[j] + "=" + currencyValues[j] + "\n";
+                    j++;
+                });
+                $("#availableCurrenciesCash").val(currencyText);
+            });
+        </script>
+
+    </body>
+
+</html>
