@@ -23,7 +23,7 @@ public class Sample1 {
         ByteBuffer buf = ByteBuffer.allocate(48);
         int bytesRead = inChannel.read(buf);
         while (bytesRead != -1) {
-            buf.flip();   
+              buf.flip();   
           //  while (buf.hasRemaining()) {
                 String str = new String(buf.array());
                 System.out.println(str);
