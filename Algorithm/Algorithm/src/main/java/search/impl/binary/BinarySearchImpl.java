@@ -18,14 +18,14 @@ public class BinarySearchImpl implements Search {
         int low = 0;
         int high = data.length - 1;
         while (high - low > 0) {
-            int middle = (high - low) / 2;
+            int middle = (high + low) / 2;
             if (data[middle] == value) {
                 return middle;
             }
             if (data[middle] > value) {
-                high--;
+                high = middle - 1;
             } else {
-                low++;
+                low = middle + 1;
             }
         }
         return -1;
