@@ -14,6 +14,74 @@ public class BasicBinaryTree {
     private Node root;
     private int size;
 
+    public int distance(Comparable a, Comparable b) {
+        Node aNode = findNodeByValue(root, a);
+        Node bNode = findNodeByValue(root, b);
+        Node common = intercept(aNode, bNode);
+        if(common==null){
+            throw new RuntimeException("No interceptions were found");
+        }
+        int aHeight = height(common, aNode);
+        int bHeight = height(common, bNode);
+        return aHeight + bHeight;
+    }
+
+    private int height(Node from, Node to) {
+        int h = 0;
+        Node tmp = from;
+        while (tmp != null) {
+            int flag = tmp.getItem().compareTo(to.getItem());
+            if (flag == 0) {
+                return h;
+            }
+            if (flag > 0) {
+                tmp = tmp.getRight();
+                h++;
+            } else {
+                tmp = tmp.getLeft();
+                h++;
+            }
+        }
+        throw new RuntimeException("Could not calculate height");
+        //return h;
+    }
+
+    public Node intercept(Comparable a, Comparable b) {
+        Node aNode = findNodeByValue(root, a);
+        Node bNode = findNodeByValue(root, b);
+        return intercept(aNode, bNode);
+    }
+
+    private Node intercept(Node aNode, Node bNode) {
+        Node node = bNode;
+        while (node != null) {
+            Node tmp = aNode;
+            while (tmp != null) {
+                if (tmp.getItem().equals(node.getItem())) {
+                    return tmp;
+                }
+                tmp = tmp.getParent();
+            }
+            node = node.getParent();
+        }
+        return null;
+    }
+
+    private Node findNodeByValue(Node node, Comparable value) {
+        if (node == null) {
+            return null;
+        }
+        int flag = node.getItem().compareTo(value);
+        if (flag == 0) {
+            return node;
+        }
+        if (flag < 1) {
+            return findNodeByValue(node.getLeft(), value);
+        } else {
+            return findNodeByValue(node.getRight(), value);
+        }
+    }
+
     public void add(Comparable item) {
         if (root == null) {
             root = new Node(item);
@@ -23,18 +91,22 @@ public class BasicBinaryTree {
         insert(root, item);
     }
 
-    public void insert(Node node, Comparable value) {
+    private void insert(Node node, Comparable value) {
         int flag = node.getItem().compareTo(value);
-        if (flag < 1) {
+        if (flag < 0) {
             if (node.getLeft() == null) {
-                node.setLeft(new Node(value));
+                Node tmp = new Node(value);
+                node.setLeft(tmp);
+                tmp.setParent(node);
                 size++;
                 return;
             }
             insert(node.getLeft(), value);
         } else {
             if (node.getRight() == null) {
-                node.setRight(new Node(value));
+                Node tmp = new Node(value);
+                node.setRight(tmp);
+                tmp.setParent(node);
                 size++;
                 return;
             }

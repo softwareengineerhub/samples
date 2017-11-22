@@ -21,11 +21,12 @@ public class Main {
     public static void main(String[] args) {
         BasicBinaryTree basicBinaryTree = new BasicBinaryTree();
         basicBinaryTree.add("Lincoln");
-        basicBinaryTree.add("Jeferson");
+        basicBinaryTree.add("Jefferson");
         basicBinaryTree.add("Washington");
         basicBinaryTree.add("Kennedy");
         basicBinaryTree.add("Jackson");
         basicBinaryTree.add("Adams");
+        basicBinaryTree.add("Madison");
         basicBinaryTree.add("Roosevelt");
         System.out.println("size=" + basicBinaryTree.size());
         System.out.println("contains(Lincoln)=" + basicBinaryTree.contains("Lincoln"));
@@ -34,7 +35,11 @@ public class Main {
         System.out.println("contains(Kennedy)=" + basicBinaryTree.contains("Kennedy"));
         System.out.println("contains(Jackson)=" + basicBinaryTree.contains("Jackson"));
         System.out.println("contains(Roosevelt)=" + basicBinaryTree.contains("Roosevelt"));
-
+        Node node = basicBinaryTree.intercept("Kennedy", "Lincoln");
+        System.out.println("node=" + node.getItem());
+        int distance = basicBinaryTree.distance("Kennedy", "Roosevelt");
+        System.out.println("distance=" + distance);
     }
 
 }
+
