@@ -26,3 +26,5 @@
 /NIOSample/target
 /JDBI/target
 /Recursion/target
+/BasicBinaryTree/target/
+/mysql-flyway/target
