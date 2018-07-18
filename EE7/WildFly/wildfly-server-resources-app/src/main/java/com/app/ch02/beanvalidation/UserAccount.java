@@ -7,6 +7,7 @@ package com.app.ch02.beanvalidation;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -15,6 +16,7 @@ import javax.validation.constraints.NotNull;
 public class UserAccount {
 
     @NotNull
+    @Size(min = 1, max=10)
     private String name;
     @NotNull
     private String mail;    
