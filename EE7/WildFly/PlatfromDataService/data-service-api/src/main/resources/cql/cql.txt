@@ -1,0 +1,1 @@
+INSERT INTO service_data.data_message (id, status, type, age, name, version) values(?,?,?,?,?,?)
