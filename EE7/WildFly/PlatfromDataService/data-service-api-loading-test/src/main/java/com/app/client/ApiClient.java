@@ -15,5 +15,7 @@ import com.app.model.DataMessage;
 public interface ApiClient {
 
     public int save(DataMessage dataMessage);
+    
+    public DataMessage get();
 
 }

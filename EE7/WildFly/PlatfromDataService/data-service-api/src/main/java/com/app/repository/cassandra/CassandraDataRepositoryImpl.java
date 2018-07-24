@@ -50,7 +50,7 @@ public class CassandraDataRepositoryImpl implements DataRepository {
     private BoundStatement bound(DataMessage dataMessage) {
         Attributes attributes = dataMessage.getAttributes();
         Person person = dataMessage.getPerson();
-        return preparedStatement.bind(UUIDs.timeBased(), dataMessage.getVersion(), attributes.getStatus(), attributes.getType(), person.getAge(), person.getName());
+        return preparedStatement.bind(UUIDs.timeBased(), dataMessage.getVersion(), attributes.getStatus(), attributes.getType(), person.getAge()+"", person.getName());
     }
 
 }

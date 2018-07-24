@@ -23,7 +23,7 @@ public class CreateCasespace {
                     + " id UUID,"
                     + " status text,"
                     + " type text,"
-                    + " age int,"
+                    + " age text,"
                     + " name text,"
                     + " version text,"
                     + "  PRIMARY KEY (id)"

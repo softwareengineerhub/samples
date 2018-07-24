@@ -42,11 +42,4 @@ public class DataMessage {
         this.version = version;
     }
 
-    @Override
-    public String toString() {
-        return "DataMessage{" + "attributes=" + attributes + ", person=" + person + ", version=" + version + '}';
-    }
-    
-    
-
 }

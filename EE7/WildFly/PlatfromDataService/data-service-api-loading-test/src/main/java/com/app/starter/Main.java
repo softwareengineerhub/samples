@@ -17,23 +17,31 @@ import com.app.service.loading.DataGenerator;
  * @author denys.prokopiuk
  */
 public class Main {
-    
+
     public static void main(String[] args) {
-        putHighLoad();
+        //  putHighLoad();
+        put();
+       //get();
     }
 
-    public void put() {
-        ApiClient client = new ApiClientImpl("http://127.0.0.1:8080//data-service-api/api/cassandra");
+    public static void put() {
+        ApiClient client = new ApiClientImpl("http://127.0.0.1:8080/data-service-api/api/cassandra");
         DataGenerator dataGenerator = new DataGenerator();
         DataMessage message = dataGenerator.initApiMessage();
         int status = client.save(message);
-        //assertTrue(status == 204);
+        System.out.println("status="+status);
     }
     
-   // @Test
+    
+    public static void get() {
+        ApiClient client = new ApiClientImpl("http://localhost:8080/data-service-api/api/cassandra");
+        DataMessage message = client.get();
+        System.out.println(message);
+    }
+    
     public static void putHighLoad() {
         HightLoadClient hightLoadClient = new HightLoadClientImpl();
-        hightLoadClient.initUsers(1000, 0, 60000, "http://127.0.0.1:8080/edi-service", new DataGenerator());
+        hightLoadClient.initUsers(1000, 0, 60000, "http://127.0.0.1:8080/data-service-api/api/cassandra", new DataGenerator());
         hightLoadClient.startCalls();
     }
 

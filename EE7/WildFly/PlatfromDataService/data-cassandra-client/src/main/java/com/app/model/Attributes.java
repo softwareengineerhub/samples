@@ -30,11 +30,4 @@ public class Attributes {
         this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return "Attributes{" + "status=" + status + ", type=" + type + '}';
-    }
-    
-    
-
 }

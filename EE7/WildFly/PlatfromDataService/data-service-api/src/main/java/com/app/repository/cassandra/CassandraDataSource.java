@@ -39,10 +39,10 @@ public class CassandraDataSource {
                 + " id UUID,"
                 + " status text,"
                 + " type text,"
-                + " age int,"
+                + " age text,"
                 + " name text,"
                 + " version text,"
-                + "  PRIMARY KEY (id)"
+                + " PRIMARY KEY (id)"
                 + ")";
         session.execute(cql);
 

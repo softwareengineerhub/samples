@@ -19,7 +19,7 @@ import javax.ws.rs.core.Response;
 public class ApiClientImpl implements ApiClient {
 
     private Client client;
-    private String servicePath = "http://localhost:8080//data-service-api/api/cassandra";
+    private String servicePath;
 
     public ApiClientImpl(String servicePath) {
         this.servicePath = servicePath;
@@ -28,8 +28,13 @@ public class ApiClientImpl implements ApiClient {
 
     @Override
     public int save(DataMessage dataMessage) {
-        Response response = client.target(servicePath + "/api").request(MediaType.APPLICATION_JSON).put(Entity.entity(dataMessage, MediaType.APPLICATION_JSON), Response.class);
+        Response response = client.target(servicePath).request(MediaType.APPLICATION_JSON).put(Entity.entity(dataMessage, MediaType.APPLICATION_JSON), Response.class);
         return response.getStatus();
+    }
+
+    @Override
+    public DataMessage get() {
+        return client.target(servicePath).request().get(DataMessage.class);
     }
 
 }

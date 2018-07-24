@@ -16,11 +16,11 @@
             <artifactId>cassandra-driver-core</artifactId>
             <version>3.5.0</version>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>com.datastax.cassandra</groupId>
             <artifactId>cassandra-driver-mapping</artifactId>
             <version>3.5.0</version>
-        </dependency>-->
+        </dependency>
     </dependencies>
     <name>data-cassandra-client</name>
 </project>
