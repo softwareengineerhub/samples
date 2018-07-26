@@ -1,0 +1,11 @@
+{
+   "attributes":    {
+      "status": "status1",
+      "type": "type1"
+   },
+   "person":    {
+      "name": "Name1",
+      "age": 1
+   },
+   "version": "version1"
+}

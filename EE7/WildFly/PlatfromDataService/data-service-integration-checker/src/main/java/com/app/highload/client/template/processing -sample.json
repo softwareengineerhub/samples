@@ -1,0 +1,23 @@
+{
+    "data": "data1",
+    "user": [
+        {
+            "count": "6903",
+            "time": "53078.0",
+            "avg_duration_of_1_call": "7.689120672171519",
+            "calls_per_second": "115"
+        },
+        {
+            "count": "6902",
+            "time": "53096.0",
+            "avg_duration_of_1_call": "7.6928426543031",
+            "calls_per_second": "115"
+        }
+    ],
+    "result": {
+        "count": "13805",
+        "maxtime": "53096.0",
+        "avg_duration_of_1_call": "7.6909815284317276",
+        "calls_per_second": "260.00075335241826"
+    }
+}
