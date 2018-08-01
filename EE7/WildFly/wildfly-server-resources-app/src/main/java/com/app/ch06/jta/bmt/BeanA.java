@@ -18,10 +18,19 @@ import javax.transaction.UserTransaction;
 @Stateless
 @TransactionManagement(TransactionManagementType.BEAN)
 public class BeanA {
+
     @Resource
     private UserTransaction ut;
-    
-    public void process(){
-        
+
+    public void process() {
+        try {
+            ut.begin();
+           int status = ut.getStatus();
+            System.out.println("status="+status);
+            //ut.setRollbackOnly();
+            ut.commit();
+        } catch (Exception ex) {
+            
+        }
     }
 }
