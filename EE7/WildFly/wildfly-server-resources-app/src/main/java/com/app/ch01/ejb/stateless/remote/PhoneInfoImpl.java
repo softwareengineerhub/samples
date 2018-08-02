@@ -6,12 +6,14 @@
 package com.app.ch01.ejb.stateless.remote;
 
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 
 /**
  *
  * @author denys.prokopiuk
  */
 @Stateless(name = "phoneInfoImpl")
+@Interceptors({MyInterceptor.class})
 public class PhoneInfoImpl  implements PhoneInfo {
 
     @Override

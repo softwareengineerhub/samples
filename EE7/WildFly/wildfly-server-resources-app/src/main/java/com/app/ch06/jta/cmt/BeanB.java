@@ -8,12 +8,15 @@ package com.app.ch06.jta.cmt;
 import javax.annotation.Resource;
 import javax.ejb.EJBContext;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 
 /**
  *
  * @author denys.prokopiuk
  */
 @Stateless
+@TransactionAttribute(TransactionAttributeType.MANDATORY)
 public class BeanB {
     
     @Resource

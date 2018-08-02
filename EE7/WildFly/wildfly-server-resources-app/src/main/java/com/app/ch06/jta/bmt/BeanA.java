@@ -24,13 +24,14 @@ public class BeanA {
 
     public void process() {
         try {
+            System.out.println("##########################UserTransaction ut=" + ut);
             ut.begin();
-           int status = ut.getStatus();
-            System.out.println("status="+status);
+            int status = ut.getStatus();
+            System.out.println("status=" + status);
             //ut.setRollbackOnly();
             ut.commit();
         } catch (Exception ex) {
-            
+            ex.printStackTrace();
         }
     }
 }

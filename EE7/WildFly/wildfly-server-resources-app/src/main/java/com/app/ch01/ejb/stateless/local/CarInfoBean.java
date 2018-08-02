@@ -7,6 +7,7 @@ package com.app.ch01.ejb.stateless.local;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 
 /**
  *

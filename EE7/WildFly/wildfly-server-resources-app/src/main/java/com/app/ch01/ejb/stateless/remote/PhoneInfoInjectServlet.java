@@ -28,7 +28,9 @@ public class PhoneInfoInjectServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        phoneInfo.getPhoneInfo();
         resp.getWriter().append("INFO." + phoneInfo + "; " + phoneInfoBean);
+        
     }
 
 }
