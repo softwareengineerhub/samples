@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <job version="1.0" restartable="false" id="MyBatchJob" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/javaee/jobXML_1_0.xsd" xmlns="http://xmlns.jcp.org/xml/ns/javaee" >
     <step allow-start-if-complete="false" id="Batch1" next="Batch2">
-        <batchlet ref="Batchlet1"/>
+        <batchlet ref="com.app.batchlet.Batchlet1"/>
     </step>
     <step allow-start-if-complete="false" id="Batch2" next="Batch3">
-        <batchlet ref="Batchlet2"/>
+        <batchlet ref="com.app.batchlet.Batchlet2"/>
     </step>
     <step allow-start-if-complete="false" id="Batch3" next="Chunk1">
-        <batchlet ref="Batchlet3"/>
+        <batchlet ref="com.app.batchlet.Batchlet3"/>
     </step>
     <step allow-start-if-complete="false" id="Chunk1">
         <chunk>
-            <reader ref="MyItemReader"/>
-            <processor ref="MyItemProcessor"/>
-            <writer ref="MyItemWriter"/>
+            <reader ref="com.app.chunk.MyItemReader"/>
+            <processor ref="com.app.chunk.MyItemProcessor"/>
+            <writer ref="com.app.chunk.MyItemWriter"/>
         </chunk>
     </step>
 </job>

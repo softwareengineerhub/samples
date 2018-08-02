@@ -1,9 +1,11 @@
+package com.app.batchlet;
+
 
 
 import javax.batch.api.AbstractBatchlet;
 import javax.inject.Named;
 
-@Named
+@Named(value = "Batchlet1")
 public class Batchlet1 extends AbstractBatchlet {
 
     @Override
