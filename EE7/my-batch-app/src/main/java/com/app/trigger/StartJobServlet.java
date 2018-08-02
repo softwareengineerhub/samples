@@ -1,3 +1,5 @@
+package com.app.trigger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,13 +22,14 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author denys.prokopiuk
  */
-@WebServlet(urlPatterns = {"/NewServlet"})
-public class NewServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/StartJobServlet"})
+public class StartJobServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         JobOperator jobOperator = BatchRuntime.getJobOperator();
         Long executionId = jobOperator.start("SampleJob", new Properties());
+        System.out.println("#################JOBID="+executionId);
         JobExecution jobExecution = jobOperator.getJobExecution(executionId);
         System.out.println("BatchStatus : " + jobExecution.getBatchStatus());
     }
