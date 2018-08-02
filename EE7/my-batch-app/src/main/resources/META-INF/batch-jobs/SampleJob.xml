@@ -6,7 +6,14 @@
     <step allow-start-if-complete="false" id="Batch2" next="Batch3">
         <batchlet ref="Batchlet2"/>
     </step>
-    <step allow-start-if-complete="false" id="Batch3">
+    <step allow-start-if-complete="false" id="Batch3" next="Chunk1">
         <batchlet ref="Batchlet3"/>
+    </step>
+    <step allow-start-if-complete="false" id="Chunk1">
+        <chunk>
+            <reader ref="MyItemReader"/>
+            <processor ref="MyItemProcessor"/>
+            <writer ref="MyItemWriter"/>
+        </chunk>
     </step>
 </job>
