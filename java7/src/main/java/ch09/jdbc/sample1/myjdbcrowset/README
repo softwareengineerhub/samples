@@ -1,0 +1,5 @@
+A CachedRowSet object is unique because it can operate without being connected to its data source. We call this a “disconnected RowSet object”.
+
+CachedRowSet gets its name due to the fact it caches its data in memory so that it can operate on its own data instead of the data stored in a database.
+
+As CachedRowSet interface is the super interface for all disconnected RowSet objects, the code we review below is also applicable to a WebRowSet, JoinRowSet, or FilteredRowSet just as well:
