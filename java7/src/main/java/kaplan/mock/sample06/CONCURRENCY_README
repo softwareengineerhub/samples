@@ -1,0 +1,5 @@
+1. Executor ex = Executors.newScheduledThreadPool(5);
+   5 threads will be created, each thread supports single task
+
+2. ReadWriteLocks:
+    There are 2 locks: one for read-only operations and one for write operations

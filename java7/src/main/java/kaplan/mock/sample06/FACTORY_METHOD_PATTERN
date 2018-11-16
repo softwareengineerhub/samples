@@ -1,0 +1,3 @@
+LogManager.getLogManager
+DriverManager.getDriver
+DriverManager.getConnection

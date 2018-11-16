@@ -1,0 +1,5 @@
+
+1. JoinRowSet has all capabilities of a WebRowSet object, in addition to SQL JOIN capabilities
+
+2. CachedRowSet and FilteredRowSet are examples of disconnected interfaces
+

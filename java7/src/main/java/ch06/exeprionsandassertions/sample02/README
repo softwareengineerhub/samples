@@ -1,0 +1,8 @@
+
+ catch (IOException | IndexOutOfBoundsException e) {
+            e = new FileNotFoundException();
+            e.printStackTrace();
+        }
+
+
+нельзя присваиавть ссылке новое значение, тк не поняино, акого типа ссылка

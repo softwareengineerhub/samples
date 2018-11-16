@@ -1,0 +1,4 @@
+
+Livelock occurs when two or more threads are too busy responding to each other that they are unable to complete their tasks.
+
+ThreadA and ThreadB are said to be livelocked if they are too busy responding to each other, rather than completing their work.

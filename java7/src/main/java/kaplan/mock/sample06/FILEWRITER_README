@@ -1,0 +1,6 @@
+try(FileWriter fw = new FileWriter("file.txt", true)){
+
+    fw.write("data");
+}
+
+дописывает в конец

@@ -1,0 +1,6 @@
+1. InvalidPathException is not  IOException
+
+2. catch(e1 | e2)  and catch(e2 | e1) - same
+
+
+3. BadFileLocation extends InvalidPathException

@@ -1,0 +1,3 @@
+
+1. Class inheritance:
+Methods in subclass can provide unique implementation to methods in the superclass

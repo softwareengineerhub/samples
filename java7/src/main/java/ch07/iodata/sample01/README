@@ -1,0 +1,8 @@
+1.     //BufferedReader handle = new BufferedReader(new FileReader(fullFilePath));
+        //BufferedReader handle = new BufferedReader(new FileReader( new File(fullFilePath)));
+        
+2. //raf.seek( raf.length() ); - to the end onf the file
+
+
+3.   RandomAccessFile raf = new RandomAccessFile("c:\\temp\\test.txt", "rwd");
+IF FILE IS NOT EXISTS --> WILL BE CREATED

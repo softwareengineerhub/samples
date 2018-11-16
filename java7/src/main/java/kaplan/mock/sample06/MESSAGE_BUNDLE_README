@@ -1,0 +1,11 @@
+1.Bundle:
+MessageTextBundle.properties
+MessageTextBundle_fr.properties
+MessageTextBundle_fr_CA.properties
+MessageTextBundle_de.properties
+ResourceBundle.getBundle("MessageTextBundle", new Locale("es", "US"));
+Получим дефолтовый - MessageTextBundle.properties
+
+2. Bundle
+ResourceBundle.getBundle("GUILabels", Locale.FRENCH);
+Даст нам GUILabels_fr.properties

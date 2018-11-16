@@ -1,0 +1,12 @@
+
+resolve - appends a partial path to an existing Path object:
+
+Path path1 = Paths.get("Documents\\JavaProjects\\Java7");
+Path path2 = Paths.get("Java7\\NIO\\src");
+
+//Manipulate
+String strResult = path1.resolve(path2).toString();
+
+"Documents\\JavaProjects\\Java7\\Java7\\NIO\\src"
+
+

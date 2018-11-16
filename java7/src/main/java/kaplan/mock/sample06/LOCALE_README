@@ -1,0 +1,6 @@
+1. To create Locale object:
+
+Locale.Builder
+Locale Constructor
+Locale.forLanguageTag
+Constants in the Locale class

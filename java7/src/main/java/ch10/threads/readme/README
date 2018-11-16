@@ -1,0 +1,12 @@
+1. Starvation:
+You have created several threads in your application.
+To ensure that important tasks are performed quickly,
+you have increased the priority of some threads and lowered the priority of others.
+At run time, however, you observe that the lower priority threads rarely get a chance to run.  
+
+Starvation occurs when one thread cannot access the CPU because one or more other threads
+are monopolizing the CPU. Thread starvation may be caused because of different thread priorities. 
+A lower-priority thread can be starved by higher-priority threads if the higher-priority threads do not yield control of the CPU from time to time.
+
+
+Starvation occurs when a thread is frequently unable to get access to a resource because the resource is hogged by other threads most of the time

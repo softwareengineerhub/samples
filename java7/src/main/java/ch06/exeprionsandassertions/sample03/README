@@ -1,0 +1,27 @@
+
+1. Post conditions for all methods can be ensured using assertions.
+public void openSocket(int port)
+{
+    Socket s = //valid code to open socket here
+    ...
+    assert s != null;
+}
+
+
+
+2. Input params of a private method can be validated using assertions.
+private void processArray(Object[] arr)
+{
+    assert arr.length == 10;
+    ...
+}
+
+
+
+3. As a rule, assertions should not be used to assert the validity of the input parameters of a public method.
+
+
+
+
+4. java -ea:... -da:good... -da:bad... Main
+Enables in Class, disables in packages
