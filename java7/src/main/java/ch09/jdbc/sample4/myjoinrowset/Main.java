@@ -12,7 +12,9 @@ package ch09.jdbc.sample4.myjoinrowset;
 public class Main {
     
     public static void main(String[] args) {
-        
+        MyJoinRowSetDAO dao = new MyJoinRowSetDAO();
+       // dao.makeCall();
+       dao.makeCall2();
     }
     
 }

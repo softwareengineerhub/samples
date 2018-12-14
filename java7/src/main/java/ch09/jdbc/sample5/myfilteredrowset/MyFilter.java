@@ -20,6 +20,8 @@ public class MyFilter implements Predicate {
     @Override
     public boolean evaluate(RowSet rs) {
         try {
+           // System.out.println("@Evaluate");
+            System.out.println("isAfterLast="+rs.isAfterLast());
             int id = rs.getInt("id");
             return (id+2)%2==0;
         } catch (SQLException ex) {
@@ -29,12 +31,12 @@ public class MyFilter implements Predicate {
 
     @Override
     public boolean evaluate(Object value, int column) throws SQLException {
-        return true;
+        return false;
     }
 
     @Override
     public boolean evaluate(Object value, String columnName) throws SQLException {
-        return true;
+        return false;
     }
     
 }

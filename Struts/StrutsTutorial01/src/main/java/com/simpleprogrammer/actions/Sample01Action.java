@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.app.sample01;
+package com.simpleprogrammer.actions;
 
 import com.opensymphony.xwork2.Action;
 
@@ -12,11 +12,12 @@ import com.opensymphony.xwork2.Action;
  * @author asusadmin
  */
 public class Sample01Action implements Action {
+    
     private String message;
     
     @Override
     public String execute() throws Exception {
-        setMessage("Sample01Action response");
+        setMessage("Sample01Action response "+hashCode());
         return "success";
     }
 
