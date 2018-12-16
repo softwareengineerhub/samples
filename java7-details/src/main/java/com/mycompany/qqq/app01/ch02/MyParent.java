@@ -3,16 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.qqq.app01.sixth;
+package com.mycompany.qqq.app01.ch02;
 
 /**
  *
  * @author Denys.Prokopiuk
  */
-public class MyParent6 {
+public class MyParent {
 
-    public static String getText() {
-        return "MyParent6";
-    }
-
+    private String name = "MyParent";
 }

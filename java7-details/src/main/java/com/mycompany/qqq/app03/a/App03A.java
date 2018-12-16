@@ -52,6 +52,7 @@ public class App03A {
         ResourceBundle rb7 = ResourceBundle.getBundle("data", localeLanguage2);
         String capital7 = rb7.getString("capital");
         System.out.println("capital7=" + capital7);        
+        
     }
 
 }
