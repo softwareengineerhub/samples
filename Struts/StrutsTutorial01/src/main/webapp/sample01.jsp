@@ -14,6 +14,6 @@
         <title>Sample01</title>
     </head>
     <body>
-        <h1><s:property value="greeting" /></h1>
+        <h1><s:property value="message" /></h1>
     </body>
 </html>
