@@ -3,21 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.qqq.app01;
+package com.mycompany.qqq.app01.ch04.sub;
 
 /**
  *
- * @author Denys.Prokopiuk
+ * @author asusadmin
  */
 public class Main {
-
+    
     public static void main(String[] args) {
         Parent parent = new Parent();
-        Child child = new Child();
-        Parent p = new Child();
         System.out.println(parent.name);
+        Child child = new Child();
         System.out.println(child.name);
-        System.out.println(p.name);
+        Parent p1 = new Child();
+        System.out.println(p1.name);
     }
-
+    
 }

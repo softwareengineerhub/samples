@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.qqq.app01.foutrh;
+package com.mycompany.qqq.app01.ch04.sub2;
 
 /**
  *
- * @author Denys.Prokopiuk
+ * @author asusadmin
  */
-public class MyParent4 {
+public class Child extends Parent {
 
-    public static String name = "MyParent4";
+    public static String name = "Child";
 }

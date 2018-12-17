@@ -32,6 +32,8 @@
 /VolatileExample/target
 /JAX-RS/activity-jaxrs/target/
 /JAX-RS/activity-jaxrs/nb-configuration.xml
+/java7/target
+/EE7/WildFly/PlatfromDataService/data-cassandra-client/target
 /EE7/WildFly/wildfly-ejb-client-app/target
 /EE7/WildFly/wildfly-server-resources-app/target
 /EE7/WildFly/wildfly-server-resources-app/nb-configuration.xml
@@ -69,3 +71,4 @@
 /java7/nbactions-assert.xml
 /java7/nb-configuration.xml
 /Struts/mavenproject3/nb-configuration.xml
+

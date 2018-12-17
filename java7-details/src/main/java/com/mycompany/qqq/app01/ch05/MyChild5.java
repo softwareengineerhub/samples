@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.qqq.app01.second;
+package com.mycompany.qqq.app01.ch05;
 
 /**
  *
  * @author Denys.Prokopiuk
  */
-public class MyChild extends MyParent {
+public class MyChild5 extends MyParent5 {
 
-    private String name = "MyChild";
+    public String getText() {
+        return "MyChild5";
+    }
 
 }
