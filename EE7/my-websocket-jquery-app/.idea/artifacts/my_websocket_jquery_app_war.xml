@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="my-websocket-jquery-app:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="my-websocket-jquery-app-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="my-websocket-jquery-app:war exploded" />
+    </root>
+  </artifact>
+</component>

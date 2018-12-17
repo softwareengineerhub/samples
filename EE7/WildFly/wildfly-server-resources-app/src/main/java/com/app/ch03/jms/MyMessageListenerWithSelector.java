@@ -24,7 +24,7 @@ public class MyMessageListenerWithSelector implements MessageListener {
    
     @Override
     public void onMessage(Message message) {
-        System.out.println("Filtered message:\t"+message);
+        System.out.println("Filtered message:\t"+message);        
     }
     
 }
