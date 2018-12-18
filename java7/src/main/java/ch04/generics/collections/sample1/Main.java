@@ -14,8 +14,40 @@ import java.util.Deque;
  * @author Denys.Prokopiuk
  */
 public class Main {
-    
+
     public static void main(String[] args) {
+        new ArrayList<>();
+        Deque<Integer> d = new ArrayDeque<>();
+        d.push(1);
+        d.push(2);
+        d.push(3);
+        for (Integer i : d) {
+            System.out.println("\tval=" + i);
+        }
+
+        System.out.println(d);
+        System.out.println(d.remove());
+        System.out.println(d.remove());
+        System.out.println(d.remove());
+        System.out.println("----------------");
+        d = new ArrayDeque<>();
+        d.add(1);
+        d.add(2);
+        d.add(3);
+        for (Integer i : d) {
+            System.out.println("\tval=" + i);
+        }
+        // d.addFirst(3);
+        System.out.println(d);
+        System.out.println(d.remove());
+        System.out.println(d.remove());
+        System.out.println(d.remove());
+        /*System.out.println(d.pollLast());
+        System.out.println(d.pollLast());
+        System.out.println(d.pollLast());*/
+    }
+
+    public static void main1(String[] args) {
         new ArrayList<>();
         Deque<Integer> d = new ArrayDeque<>();
         d.push(1);
@@ -29,12 +61,12 @@ public class Main {
         d = new ArrayDeque<>();
         d.add(1);
         d.add(2);
+        //d.add(3);
         d.addFirst(3);
         System.out.println(d);
         System.out.println(d.pollLast());
         System.out.println(d.pollLast());
         System.out.println(d.pollLast());
-        
     }
-    
+
 }

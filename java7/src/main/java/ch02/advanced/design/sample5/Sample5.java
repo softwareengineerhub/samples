@@ -17,11 +17,11 @@ public class Sample5 {
         V1, V2, V3;
                 
         static {
-            System.out.println("Static "+System.currentTimeMillis());
+            System.out.println("Static "+System.currentTimeMillis());            
         }
         
         {
-            System.out.println("Non static "+System.currentTimeMillis());
+            System.out.println("Non static. hashCode="+hashCode());
         }
         
         
