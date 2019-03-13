@@ -12,13 +12,8 @@ import java.util.Arrays;
  * @author Denys.Prokopiuk
  */
 public class MyQuickSorterImpl {
-    private String str="";
-    
-    
-    
+
     public void sort(int[] data) {
-        System.out.println("------------------------");
-        System.out.println(str+Arrays.toString(data));
         if (data.length <= 1) {
             return;
         }
@@ -28,54 +23,55 @@ public class MyQuickSorterImpl {
             }
             return;
         }
+
         int leftIndex = 0;
-        int rightIndex = data.length-1;
+        int rightIndex = data.length - 1;
         int pivotIndex = data.length / 2;
         int pivot = data[pivotIndex];
-        System.out.println("\t"+"pivot="+pivot);
-        while (leftIndex!=pivotIndex && rightIndex!=pivotIndex) {
-            //System.out.println("\t"+Arrays.toString(data));
+
+        while (leftIndex != pivotIndex && rightIndex != pivotIndex) {
             if (data[leftIndex] > pivot && data[rightIndex] < pivot) {
                 swap(data, leftIndex, rightIndex);
                 leftIndex++;
                 rightIndex--;
             } else if (data[leftIndex] > pivot) {
                 rightIndex--;
-         //       System.out.println("\t"+"right--");
             } else {
-           //     System.out.println("\t"+"left++");
                 leftIndex++;
             }
-        }        
-        if(data[leftIndex]>pivot){
-           swap(data, pivotIndex, leftIndex);
-        }else if(data[rightIndex]<pivot){
+        }
+
+        if (data[leftIndex] > pivot) {
+            swap(data, pivotIndex, leftIndex);
+        } else if (data[rightIndex] < pivot) {
             swap(data, pivotIndex, rightIndex);
         }
-        //System.out.println("###################"+Arrays.toString(data));
-        int[] leftTmp = Arrays.copyOfRange(data, 0, pivotIndex+1);
-        int[] rightTmp = Arrays.copyOfRange(data, pivotIndex+1, data.length);
-        //System.out.println("\t\t\t###################left="+Arrays.toString(leftTmp));
-        //System.out.println("\t\t\t###################right="+Arrays.toString(rightTmp));
+
+        System.out.println("###################" + Arrays.toString(data));
+        int[] leftTmp = null;
+        int[] rightTmp = null;
+        if (data[pivotIndex] < pivot) {
+            leftTmp = new int[pivotIndex + 1];
+            rightTmp = new int[data.length - leftTmp.length];
+            System.arraycopy(data, 0, leftTmp, 0, pivotIndex + 1);
+            System.arraycopy(data, pivotIndex + 1, rightTmp, 0, rightTmp.length);
+        } else {
+            leftTmp = new int[pivotIndex];
+            rightTmp = new int[data.length - leftTmp.length];
+            System.arraycopy(data, 0, leftTmp, 0, pivotIndex);
+            System.arraycopy(data, pivotIndex, rightTmp, 0, rightTmp.length);
+        }
         sort(leftTmp);
-        
-        
         sort(rightTmp);
-        //sort(data,pivotIndex+1, data.length);
-        /*sort(leftTmp);
-        sort(rightTmp);
-        */
-        
-        System.out.println("\t\t\t\t@@@@@@@@@@@@@@@@@@@left:"+Arrays.toString(leftTmp));
-        System.out.println("\t\t\t\t@@@@@@@@@@@@@@@@@@@right"+Arrays.toString(rightTmp));
-        int i=0;
-        for(;i<leftTmp.length;i++){
+
+        int i = 0;
+        for (; i < leftTmp.length; i++) {
             data[i] = leftTmp[i];
         }
-        for(int j=0;j<rightTmp.length;j++){
+        for (int j = 0; j < rightTmp.length; j++) {
             data[i++] = rightTmp[j];
         }
-        System.out.println("\t\t\t\t###################"+Arrays.toString(data));
+
     }
 
     private void swap(int[] data, int i, int j) {
