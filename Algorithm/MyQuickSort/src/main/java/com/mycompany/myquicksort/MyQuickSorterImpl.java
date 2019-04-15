@@ -10,6 +10,7 @@ import java.util.Arrays;
 /**
  *
  * @author Denys.Prokopiuk
+ * https://www.youtube.com/watch?v=Fiot5yuwPAg
  */
 public class MyQuickSorterImpl {
 
