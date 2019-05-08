@@ -27,26 +27,29 @@ public class SimpleHashTableImpl<K, V> implements SimpleHashTable<K, V> {
     }
 
     @Override
-    public void put(K key, V value) {
+    public V put(K key, V value) {
         if (key == null) {
-            return;
+            return null;
         }
         int hashIndex = calculateHashIndex(key);
         Node root = data[hashIndex];
         if (root == null) {
             data[hashIndex] = new Node(key, value);
             n++;
-            return;
-        }
-        while (root != null) {
-            if (root.getKey().equals(key)) {
-                root.setValue(value);
-                return;
+            return null;
+        }        
+        Node<K,V> tmp = root;
+        while (tmp != null) {
+            if (tmp.getKey().equals(key)) {
+                V oldValue = tmp.getValue();
+                tmp.setValue(value);
+                return oldValue;
             }
-            root = root.getNext();
+            tmp = tmp.getNext();
         }
-        root.setNext(new Node(key, value));
+        tmp.setNext(new Node(key, value));
         n++;
+        return null;
     }
 
     @Override
