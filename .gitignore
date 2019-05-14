@@ -72,3 +72,10 @@
 /java7/nb-configuration.xml
 /Struts/mavenproject3/nb-configuration.xml
 
+/Algorithm/MyQuickSort/target
+/Algorithm/BinaryTree/target/
+/patterns/.idea
+/patterns/target
+/patterns/patterns.iml
+/aggregation/nbproject
+/aggregation/target
