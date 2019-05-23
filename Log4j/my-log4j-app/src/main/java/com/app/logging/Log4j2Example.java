@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Log4j2Example {
 
-    private static final Logger LOG = LogManager.getLogger("logC");
+    private static final Logger LOG = LogManager.getLogger();
 
     public static void main(String... args){
         LOG.debug("This will be printed on debug");

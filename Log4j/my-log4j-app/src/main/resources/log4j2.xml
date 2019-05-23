@@ -1,78 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration>
-
+<Configuration status="warn" name="MyApp" packages="">
     <Appenders>
-        <!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
-        <RandomAccessFile name="ASYNC" fileName="async.log" immediateFlush="false" append="false">
-            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n"/>
-        </RandomAccessFile>
-        <!-- console output -->
-        <Console name="STDOUT" target="SYSTEM_OUT">
-            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n"/>
-        </Console>
-               
-        <RollingFile name="INFO" append="true" includeLocation="true" fileName="info.log" createOnDemand="true"
-                     filePattern="info-%d{yyyy-MM-dd}-%i.log" >
-            <PatternLayout>
-                <pattern>%d{dd MMM yyyy HH:mm:ss,SSS} %-10p %l -- %m%n</pattern>
-            </PatternLayout>
-            <Policies>
-                <SizeBasedTriggeringPolicy size="30 MB" />
-            </Policies>
-            <DefaultRolloverStrategy max="2"/>
-        </RollingFile>
-        
-        <RollingFile name="APP" append="true" includeLocation="true" fileName="app.log" createOnDemand="true"
-                     filePattern="info-%d{yyyy-MM-dd}-%i.log" >
-            <PatternLayout>
-                <pattern>%d{dd MMM yyyy HH:mm:ss,SSS} %-10p %l -- %m%n</pattern>
-            </PatternLayout>
-            <Policies>
-                <SizeBasedTriggeringPolicy size="30 MB" />
-            </Policies>
-            <DefaultRolloverStrategy max="2"/>
-        </RollingFile>
-        
-         <RollingFile name="WARN" append="true" includeLocation="true" fileName="warn.log" createOnDemand="true"
-                     filePattern="info-%d{yyyy-MM-dd}-%i.log" >
-            <PatternLayout>
-                <pattern>%d{dd MMM yyyy HH:mm:ss,SSS} %-10p %l -- %m%n</pattern>
-            </PatternLayout>
-            <Policies>
-                <SizeBasedTriggeringPolicy size="30 MB" />
-            </Policies>
-            <DefaultRolloverStrategy max="2"/>
-        </RollingFile>
-        
+        <SMTP name="Mail" 
+              subject="Error Log" 
+              to="javamailtest.javamailtest@gmail.com"
+              from="javamailtest.javamailtest@gmail.com"
+              smtpHost="smtp.gmail.com" 
+              smtpPort="465" 
+              bufferSize="50" 
+              smtpPassword="SimpleMail23" 
+              smtpUsername="javamailtest.javamailtest@gmail.com" 
+              smtpProtocol="smtps">
+        </SMTP>     
     </Appenders>
-
     <Loggers>
-        <Logger name="logA" level="info">
-            <AppenderRef ref="INFO"/>           
-        </Logger>
-        <Logger name="logB" level="WARN">
-            <AppenderRef ref="WARN"/>            
-        </Logger>
-        <Logger name="logC" level="INFO">
-            <AppenderRef ref="APP"/>            
-        </Logger>
-
-        <!-- pattern layout actually uses location, so we need to include it -->
-      <!--  <AsyncLogger name="com.smc.info" level="info" includeLocation="true">
-            <AppenderRef ref="INFO"/>
-        </AsyncLogger>
-        
-        <AsyncLogger name="com.smc.warn" level="warn" includeLocation="true">
-            <AppenderRef ref="WARN"/>
-        </AsyncLogger>
--->
-
-        <!-- root loggers -->
-        <Root level="DEBUG" includeLocation="true">            
-            <AppenderRef ref="STDOUT"/>                              
+        <Root level="error">
+            <AppenderRef ref="Mail"/>
         </Root>
-        
-        
     </Loggers>
-
 </Configuration>
