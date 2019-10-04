@@ -1,0 +1,60 @@
+1.Collection method was added:
+ - Collection.stream()
+
+
+2. Stream.of
+Stream<String> song = Stream.of("gently", "down", "the", "stream");
+
+3. Stream.empty()
+Stream<String> song = Stream.empty();
+Stream<String> song = Stream.<String>empty();
+
+
+
+
+
+4. Infinity Stream 
+
+
+Exception:
+java.lang.IllegalStateException: stream has already been operated upon or closed
+
+
+//Math.random()
+Stream<Double> stream15 = Stream.generate(Math::random);
+
+
+
+Stream.generate()
+Stream.iterate()
+They create stream with unlimited data.
+
+to call stream.count() --> goes for infinity operations
+
+
+generate() - always generates new value
+iterate() - takes seed (old value and update it each time)
+
+
+generate() - uses supplier
+Stream.generate(new Supplier<String>() {
+            @Override
+            public String get() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+
+
+iterate() - uses UnaiOperator
+
+
+-------------------------------------------------------
+Another methods that create Stream:
+1) Stream<String> words = Pattern.compile("[\\P{L}]+").splitAsStream(contents);
+2) Stream also implements Autoclosable
+try (Stream<String> lines = Files.lines(path)) {
+Do something with lines
+}
+
+------------------------------
+Closeable IS-A Autocloseable

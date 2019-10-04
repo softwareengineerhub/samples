@@ -1,0 +1,4 @@
+Is the comparator code in the Arrays.sort method called in the same thread as
+the call to sort or a different thread?
+
+Yes! The same

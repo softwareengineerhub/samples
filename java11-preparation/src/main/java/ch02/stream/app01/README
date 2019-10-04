@@ -1,0 +1,32 @@
+1. Iterator code is hard to parallel:
+    List<String> words = Arrays.asList(contents.split(contents));
+        int count = 0;
+        for(String w: words){
+            if(w.length()>12){
+                count++;
+            }
+        }
+
+
+2. Streams:
+    a) A stream does not store its elements. They may be stored in an underlying collection or generated on demand.
+    b) Stream operations don’t mutate their source. Instead, they return new streams that hold the result.
+    c) Stream operations are lazy when possible. This means they are not executed
+until their result is needed. For example, if you only ask for the first five long
+words instead of counting them all, then the filter method will stop filtering
+after the fifth match. As a consequence, you can even have infinite streams!
+
+
+3. Benefits:
+    a) Many people find stream expressions easier to read than the loop equivalents.
+    b) Moreover, they can be easily parallelized.
+    c) Streams follow the “what, not how” principle.
+
+
+4. How streams work:
+    a) You create a stream.
+    b) You specify intermediate operations for transforming the initial stream into others, in one or more steps.
+    c) You apply a terminal operation to produce a result. This operation forces the
+execution of the lazy operations that precede it. Afterwards, the stream can
+no longer be used.
+

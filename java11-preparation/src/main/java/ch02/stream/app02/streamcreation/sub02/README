@@ -1,0 +1,23 @@
+A stream transformation reads data from a stream and puts the transformed
+data into another stream.
+
+1) Filter:
+stream.filter(new Predicate<Integer>(){
+            
+            @Override
+            public boolean test(Integer t) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+            
+        });
+
+filter is not invoked by default.
+
+We need to call count or other terminal operations.
+ stream.filter(t->{
+            System.out.println("t="+t);
+            return true;}).filter(t->{
+            System.out.println("t="+t);
+            return true;}).count();
+
+will apply all filters for t1, then all filters for t2 , ...

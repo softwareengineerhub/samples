@@ -1,0 +1,86 @@
+1. Integer.compare(x, y)
+
+2. (final String name) -> ...
+(@NonNull String name) -> ...
+
+3. NOTE: You can’t even assign a lambda expression to a variable of type
+Object—Object is not a functional interface.
+The Java API defines a number of very generic functional interfaces in the
+java.util.function package.
+
+BiFunction<T, U, R>
+
+BiFunction<String, String, Integer> comp
+= (first, second) -> Integer.compare(first.length(), second.length());
+
+
+4. @FunctionalInterface
+
+
+5. Method reference:
+button.setOnAction(event -> System.out.println(event));
+button.setOnAction(System.out::println);
+System.out::println
+Arrays.sort(strings, String::compareToIgnoreCase)
+
+Math::pow
+Math.pow(x, y)
+
+
+• object::instanceMethod
+• Class::staticMethod
+• Class::instanceMethod
+
+
+
+6. Variable scope
+
+To understand what is happening, we need to refine our understanding of a
+lambda expression. A lambda expression has three ingredients:
+1. A block of code
+2. Parameters
+3. Values for the free variables, that is, the variables that are not parameters and
+not defined inside the code
+
+
+Closure:
+NOTE: The technical term for a block of code together with the values of the
+free variables is a closure. If someone gloats that their language has closures,
+rest assured that Java has them as well. In Java, lambda expressions are
+closures. In fact, inner classes have been closures all along. Java 8 gives
+us closures with an attractive syntax.
+
+
+Incorrect:
+public static void repeatMessage(String text, int count) {
+Runnable r = () -> {
+while (count > 0) {
+count--; // Error: Can’t mutate captured variable
+System.out.println(text);
+Thread.yield();
+}
+};
+new Thread(r).start();
+}
+
+Variable must be final or effectively final
+
+Mutating variables in a lambda expression is not threadsafe.
+
+
+
+
+7. Default methods
+
+Java collections library has been designed many years ago, and there is a
+problem. If the Collection interface gets new methods, such as forEach, then
+every program that defines its own class implementing Collection will break until
+it, too, implements that method. That is simply unacceptable in Java.
+
+
+The Java designers decided to solve this problem once and for all by allowing
+interface methods with concrete implementations (called default methods).
+
+
+forEach method was added to Iterable as a default
+myInter.doAction();
