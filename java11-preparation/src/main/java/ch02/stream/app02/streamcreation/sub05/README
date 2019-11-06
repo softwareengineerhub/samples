@@ -1,0 +1,21 @@
+Stateless Stream:
+When elements is retrieved from mapped or filteres stream the answer does not depend on the previous elements.
+
+
+Statful transformations:
+1. Distinct:
+Stream<String> uniqueWords
+= Stream.of("merrily", "merrily", "merrily", "gently").distinct();
+
+distinct is based on equals() and hashCode();
+The first item services:
+1; Object#1
+
+The stream
+must obviously remember the elements that it has already seen
+
+
+
+2. Sorting:
+Collections.sort() - changes original data;
+Stream.sort - does not change original data;

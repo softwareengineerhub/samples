@@ -1,0 +1,26 @@
+Reduction
+
+They reduce the stream to a
+value that can be used in your program. Reductions are terminal operations. After
+a terminal operation has been applied, the stream ceases to be usable.
+
+Operations:
+1) count - returns long
+2) min(Comparator) - Optional<Object>
+3) max(Comparator) - Optional<Object>
+We need optional as because the stream happened to be empty
+4) findFirst() - returns the first item from stream (for example after filter):
+Optional<String> startsWithQ
+= words.filter(s -> s.startsWith("Q")).findFirst();
+5) findAny() - If you ok with any item accept criteria, not exactly the first one.
+Useful in parallel stream
+Optional<String> startsWithQ
+= words.parallel().filter(s -> s.startsWith("Q")).findAny();
+6) anyMatch() - boolean
+Just to indicate whether at least 1 item mathes some criteria
+boolean aWordStartsWithQ = words.parallel().anyMatch(s -> s.startsWith("Q"));
+7) allMatch() - boolean
+8) noneMatch() - boolean
+
+
+

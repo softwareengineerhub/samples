@@ -1,0 +1,11 @@
+Since it is not possible to create a generic array at runtime, the expression
+stream.toArray() returns an Object[] array. If you want an array of the correct type,
+pass in the array constructor:
+
+
+Collectors:
+1. A supplier to make new instances of the target object, for example, a
+constructor for a hash set
+2. An accumulator that adds an element to the target, for example, an add method
+3. An combiner that merges two objects into one, such as addAll
+

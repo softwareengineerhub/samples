@@ -1,0 +1,13 @@
+Stream map - just a function to create new value from current existing
+f(x)
+
+
+In case of f(x) returns new Stream of data we need to use flatMap
+flatMap - create 1 Stream from group of streams
+
+
+Stream.of("A","B","C").map(item-> Stream.of(item, item, item)).forEach(System.out::println)
+- prints java.util.stream.ReferencePipeline$Head@58372a00
+
+Stream.of("A","B","C").flatMap(item -> Stream.of(item, item, item)).forEach(System.out::println);
+- prints A,A,A,B,B,B,C,C,C

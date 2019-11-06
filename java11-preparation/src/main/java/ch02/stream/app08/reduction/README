@@ -1,0 +1,10 @@
+The operation should be associative: It shouldn’t matter in which order you combine
+the elements. In math notation, (x op y) op z = x op (y op z). This allows
+efficient reduction with parallel streams.
+
+Subtraction is not associative
+
+
+
+Reduce with accumulator:
+Integer result =  Stream.of(1,2,3,4,5,6,7).reduce(0, (a, b)->a+b);

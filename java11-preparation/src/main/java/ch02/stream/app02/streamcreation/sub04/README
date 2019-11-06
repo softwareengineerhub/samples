@@ -1,0 +1,40 @@
+Stream.of(1,2,3,4,5,6,7,8,9,10).limit(5).forEach(System.out::print);
+        System.out.println();
+        Stream.of(1,2,3,4,5,6,7,8,9,10).skip(3).limit(5).forEach(System.out::print);
+        System.out.println();
+        Stream.of(1,2,3,4,5,6,7,8,9,10).limit(5).skip(3).forEach(System.out::print);
+
+---------------------------------------------------------------------------------------------------
+Skip and limit use [];
+
+Result:
+12345
+45678
+45
+
+--------------------------------------------------------------------------------------------------
+Stream concatination:
+Stream s1 = Stream.of(1,2,3,4,5);
+        Stream s2 = Stream.of("a","b","c","d","e");
+        Stream res = Stream.concat(s1, s2);
+        res.forEach(System.out::print);
+
+        Result:
+        12345abcde
+-----------------------------------------------------------------
+
+Stream peek(): - does not print any data
+Stream<String> nameStream = Stream.of("Alice", "Bob", "Chuck");
+nameStream.peek(System.out::println);
+
+
+
+peek()‘s Javadoc page says:
+“This method exists mainly to support debugging,
+where you want to see the elements as they flow past a certain point in a pipeline“.
+
+
+Another option of usage of peek() is altering internal state of object:
+
+
+
