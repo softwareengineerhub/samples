@@ -9,3 +9,10 @@ constructor for a hash set
 2. An accumulator that adds an element to the target, for example, an add method
 3. An combiner that merges two objects into one, such as addAll
 
+Collectors to Map:
+you need to define rules for keys and values:
+1.Object::keyField, Object::valueField
+2. Function.identity() - always returns own arguments
+
+For each of the toMap methods, there is an equivalent toConcurrentMap
+method that yields a concurrent map.

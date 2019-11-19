@@ -1,0 +1,25 @@
+1. HasMap and ArrayList are default
+2. classifer function - MyPhone::getId - something like partition key
+
+3. The idea is to create sub set from Stream based on some criteria.
+
+4. When the classifier function is a predicate function (that is, a function returning
+a boolean value), the stream elements are partitioned into two lists:
+use 
+Map<Boolean, List<MyPhone>> map4 = Stream.of(p1, p2, p3, p4, p5).collect(Collectors.partitioningBy(new Predicate<MyPhone>(){
+
+5. you call the groupingByConcurrent method
+
+6.Group into Set (HashSet), not into List
+Collectors.groupingBy(MyPhone::getId, Collectors.toSet())
+
+7. Standard collectors:
+- counting()
+- summarizingInt, summarizingLong, summarizingDouble
+- maxBy
+- minBy
+- reduce():
+Map<String, Object> map7 = Stream.of(p1, p2, p3, p4, p5).collect(Collectors.groupingBy(MyPhone::getName, Collectors.reducing("", new BinaryOperator<Object>()
+Map<String> - take by partitionKey MyPhone::getName
+Map<, Object> - take by identity value class ollectors.reducing(""
+

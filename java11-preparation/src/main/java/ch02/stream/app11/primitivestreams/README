@@ -1,0 +1,14 @@
+IntStream intStream
+intStream.boxed() -- Stream<Integer>
+
+
+
+The toArray methods return primitive type arrays.
+• Methods that yield an optional result return an OptionalInt, OptionalLong, or
+OptionalDouble. These classes are analogous to the Optional class, but they have
+methods getAsInt, getAsLong, and getAsDouble instead of the get method.
+• There are methods sum, average, max, and min that return the sum, average,
+maximum, and minimum. These methods are not defined for object streams.
+• The summaryStatistics method yields an object of type IntSummaryStatistics,
+LongSummaryStatistics, or DoubleSummaryStatistics that can simultaneously report
+the sum, average, maximum, and minimum of the stream.

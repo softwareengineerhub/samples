@@ -41,6 +41,7 @@ public class Main {
         summaryStatistics2.getMax();
         summaryStatistics2.getMin();
         summaryStatistics2.getSum();
+        
 
 
     }
