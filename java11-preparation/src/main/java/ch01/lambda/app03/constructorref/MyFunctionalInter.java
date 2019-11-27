@@ -7,12 +7,10 @@ package ch01.lambda.app03.constructorref;
 
 /**
  *
- * @author DProkopiuk
+ * @author asusadmin
  */
-public class MyProcessor {
-    
-    public void processData(MyData myData){
-        System.out.println(myData);
-    }
-        
+public interface MyFunctionalInter {
+
+    public MyData createData();
+
 }

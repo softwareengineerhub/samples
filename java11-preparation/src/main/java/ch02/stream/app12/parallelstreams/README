@@ -1,0 +1,44 @@
+The parallel method converts any sequential stream into
+a parallel one.
+
+By default, stream operations create sequential streams, except for
+Collection.parallelStream()
+
+As long as the stream is in parallel mode when the terminal method executes,
+all lazy intermediate stream operations will be parallelized
+
+It is important that the operations are stateless
+and can be executed in an arbitrary order.
+It is your responsibility to ensure that any functions that you pass to parallel
+stream operations are threadsafe
+
+You could use an array of AtomicInteger objects for the counters
+By default, streams that arise from ordered collections (arrays and lists), from
+ranges, generators, and iterators, or from calling Stream.sorted, are ordered. Results
+are accumulated in the order of the original elements, and are entirely predictable.
+If you run the same operations twice, you will get exactly the same results.
+Ordering does not preclude parallelization. For example, when computing
+stream.map(fun), the stream can be partitioned into n segments, each of which is
+concurrently processed. Then the results are reassembled in order.
+
+
+To be exact, since intermediate stream operations are lazy, it is possible to
+mutate the collection up to the point when the terminal operation executes.
+For example, the following is correct:
+List<String> wordList = ...;
+Stream<String> words = wordList.stream();
+wordList.add("END"); // Ok
+long n = words.distinct().count();
+But this code is not:
+Stream<String> words = wordList.stream();
+words.forEach(s -> if (s.length() < 12) wordList.remove(s));
+// Error—interference
+
+
+
+Functional interface:
+It is an
+interface with one nondefault method
+
+
+

@@ -1,0 +1,22 @@
+1) compute(key, BiFunction) - simply takes value by this key from map and then you need to define f(key, value);
+
+2) computeIfPresent(-||-) - do equla to 1) but returns null if map does not have such key
+
+3) computeIfAbsent(key, Function) - simply takes value by this key from map; if key exists--> return value, else --> return f(key)
+
+4) forEach(BiConsumer) - simple for each with pair (key, value)
+
+5) getOrDefault(key, defaultValue) - simple return value by key or return default value if no data by the key
+
+6) merge(key, value, BiFunction) - takes key and put value by this key as f(oldvalue, newvalue) or simply add newvalue if key was not presented
+
+7) putIfAbsent(key, newvakue) - updates value by current key; returns null - in case key was not found;
+If key exists: no update, return old value
+
+8) map.remove(key, value) - return boolean; removes only if pair key;value Exists
+
+9) map.replace(key, newvalue) - change value by this key, returns old value pr null if key not exists
+map.replace(key,value, newvalue) - change value by this key; value pair, returns old value pr null if key not exists
+
+10) replaceAll(BiFunction) - traverse over all key;value pairs and put new value to the key as a value;
+void; 

@@ -12,8 +12,9 @@ package ch01.lambda.app03.constructorref;
 public class Main {
     
     public static void main(String[] args) {
-        MyProcessor myProcessor = new MyProcessor();
-     //   myProcessor.processData(MyData::new);
+        MyFunctionalInter mfi = MyData::new;
+        MyData myData = mfi.createData();
+        System.out.println(myData);
     }
     
 }

@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch01.lambda.app03.constructorref;
+package ch01.lambda.app03.constructorref2;
 
 /**
  *
- * @author DProkopiuk
+ * @author asusadmin
  */
-public class MyData {
+public interface MyFunctionalInter2 {
     
+    public MyData2 createData2(String name, int age);
     
 }

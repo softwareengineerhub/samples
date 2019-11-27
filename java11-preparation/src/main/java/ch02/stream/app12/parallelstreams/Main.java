@@ -3,22 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch01.lambda.app06.staticmethods;
+package ch02.stream.app12.parallelstreams;
+
+import java.util.Collection;
+import java.util.stream.Stream;
 
 /**
  *
- * @author DProkopiuk
+ * @author asusadmin
  */
 public class Main {
 
     public static void main(String[] args) {
-        InterA.doAction();
-        InterB.doAction();
-        //InterC.doAction();
-        ChildItem childItem = new ChildItem();
-        //childItem.doAction();        
+        String[] wordArray = {"a", "b", "c"};
+        Stream<String> parallelWords = Stream.of(wordArray).parallel();
         
-        //InnerC.doAction();
-    }
 
+    }
+    
 }

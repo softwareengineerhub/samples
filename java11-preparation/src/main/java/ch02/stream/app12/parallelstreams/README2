@@ -1,0 +1,30 @@
+Supplier<T> None T Supplies a value of type T
+Consumer<T> T void Consumes a value of type T
+Consumes values of types T
+and U
+BiConsumer<T, U> T, U void
+Predicate<T> T boolean A Boolean-valued function
+An int-, long-, or double-valued
+function
+int
+long
+double
+ToIntFunction<T> T
+ToLongFunction<T>
+ToDoubleFunction<T>
+A function with argument of
+type int, long, or double
+int R
+long
+double
+IntFunction<R>
+LongFunction<R>
+DoubleFunction<R>
+A function with argument of
+type T
+Function<T, R> T R
+A function with arguments of
+types T and U
+BiFunction<T, U, R> T, U R
+UnaryOperator<T> T T A unary operator on the type T
+BinaryOperator<T> T, T T A binary operator on the type T
