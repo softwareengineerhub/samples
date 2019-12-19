@@ -5,12 +5,15 @@
  */
 package ch02.stream.app02.streamcreation.sub01;
 
+import com.sun.org.apache.xpath.internal.objects.XObject;
+import com.sun.org.apache.xpath.internal.operations.UnaryOperation;
 import java.io.Closeable;
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
+import javax.xml.transform.TransformerException;
 
 /**
  *
