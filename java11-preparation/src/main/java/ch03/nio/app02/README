@@ -1,0 +1,3 @@
+эТА ПАРА АНТОГОНИСТОВ, поэтому будет RuntimeException
+//options[0] = APPEND;
+//options[1] = StandardOpenOption.TRUNCATE_EXISTING;

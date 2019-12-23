@@ -1,0 +1,6 @@
+PathMatcher IS-A interface.
+We can crate it from FileSystem
+
+It supports global and regexp syntaxis;
+
+returns boolean to indicate whether file matches

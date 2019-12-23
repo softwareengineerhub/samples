@@ -1,0 +1,14 @@
+Path path1 = Paths.get("file1.txt");
+Path path2 = Paths.get("file2.txt");
+Files.copy(path1, path2, StandardCopyOption.COPY_ATTRIBUTES);
+
+this code throws RuntimeException();
+
+Need to change StandardCopyOption to REPLACE_EXISTING
+--------------------------------------------------------------
+
+Печатает размер файлика
+Path path3 = Paths.get("file3.txt");
+System.out.println(Files.readAttributes(path3, "size"));
+
+Возвращает class java.util.Collections$UnmodifiableMap
