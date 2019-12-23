@@ -24,7 +24,9 @@ public class Main {
 
         System.out.println("-------------------String Collectors-------------------");
         String text = Stream.of("a","b","c","d").collect(Collectors.joining());
+        System.out.println("joining()="+text);
         String text2 = Stream.of("a","b","c","d").collect(Collectors.joining(";"));
+        System.out.println("joining(;)="+text2);
 
         System.out.println("-------------------IntSummaryStatistics Collectors-------------------");
         IntSummaryStatistics summaryStatistics = Stream.of("a","b","c","d").collect(Collectors.summarizingInt(new ToIntFunction<Object>() {
@@ -35,14 +37,18 @@ public class Main {
             }
         }));
 
-        IntSummaryStatistics summaryStatistics2 = Stream.of("a","b","c","d").collect(Collectors.summarizingInt(item->item.length()));
-        summaryStatistics2.getAverage();
-        summaryStatistics2.getCount();
-        summaryStatistics2.getMax();
-        summaryStatistics2.getMin();
-        summaryStatistics2.getSum();
+        IntSummaryStatistics summaryStatistics2 = Stream.of("aaa","b","c","d").collect(Collectors.summarizingInt(item->item.length()));
+        double avg = summaryStatistics2.getAverage();
+        long count = summaryStatistics2.getCount();
+        int max = summaryStatistics2.getMax();
+        int min = summaryStatistics2.getMin();
+        long sum = summaryStatistics2.getSum();
+        System.out.println("avg="+avg);
+        System.out.println("count="+count);
+        System.out.println("max="+max);
+        System.out.println("min="+min);
+        System.out.println("sum="+sum);
         
-
 
     }
 
