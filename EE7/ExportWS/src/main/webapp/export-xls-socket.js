@@ -1,6 +1,8 @@
 //window.onload = init;
-var socket = new WebSocket("ws://localhost:7001/ExportWS/export");
+//var socket = new WebSocket("ws://localhost:7001/ExportWS/export");
+var socket = new WebSocket("ws://localhost:8080/ExportWS/export");
 socket.onmessage = onMessage;
+
 
 function onMessage(event) {   
     var blob1 = event.data;

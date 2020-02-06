@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch03.nio.app03;
+package w.nio.app03;
 
 import java.io.File;
 import java.nio.file.FileSystem;
