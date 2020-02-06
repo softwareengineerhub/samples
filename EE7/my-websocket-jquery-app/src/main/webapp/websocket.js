@@ -1,5 +1,5 @@
 window.onload = init;
-var socket = new WebSocket("ws://localhost:8080/my-websocket-jquery-app/actions");
+var socket = new WebSocket("ws://localhost:8084/my-websocket-jquery-app/actions");
 socket.onmessage = onMessage;
 
 function onMessage(event) {
