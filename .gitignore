@@ -97,3 +97,4 @@
 /net/my-rmi-client/target
 /net/my-rmi-server/target
 /net/rmi-common/target
+/patterns/target/
