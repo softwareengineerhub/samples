@@ -1,3 +1,4 @@
+target/
 /Cache/JCache/jcache-app/target
 /Cache/JCache/CacheAnotations/target
 /Cache/JCache/CacheAnotations/nb-configuration.xml
