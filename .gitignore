@@ -1,5 +1,6 @@
 .idea/
 target/
+*.iml
 /Cache/JCache/jcache-app/target
 /Cache/JCache/CacheAnotations/target
 /Cache/JCache/CacheAnotations/nb-configuration.xml
@@ -100,4 +101,4 @@ target/
 /net/my-rmi-server/target
 /net/rmi-common/target
 /patterns/target/
-*.iml
+
