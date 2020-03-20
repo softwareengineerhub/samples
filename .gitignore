@@ -100,4 +100,4 @@ target/
 /net/my-rmi-server/target
 /net/rmi-common/target
 /patterns/target/
-/*.iml
+*.iml
