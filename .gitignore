@@ -102,3 +102,13 @@ target/
 /net/rmi-common/target
 /patterns/target/
 
+/MQTT/MQTTConsumerUI/nb-configuration.xml
+/MQTT/MQTTConsumerUI/nbactions.xml
+/MQTT/mqtt-consumer/userIdFootballUAConsumer-tcpioteclipseorg1883
+/MQTT/mqtt-consumer/userIdFootballUAConsumer-tcp1270011883/*.lck
+/MQTT/mqtt-producer/userIdFootballUAProducer-tcp1270011883/.lck
+/MQTT/mqtt-producer/userIdFootballUAProducer-tcplocalhost1883/*.lck
+/MQTT/mqtt-producer/userIdFootballUAProducer-tcpioteclipseorg1883/*.lck
+/MQTT/mqtt-producer/nbactions.xml
+/AVRO/.DS_Store
+/AVRO/*.DS_Store
