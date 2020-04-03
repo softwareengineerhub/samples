@@ -112,3 +112,8 @@ target/
 /MQTT/mqtt-producer/nbactions.xml
 /AVRO/.DS_Store
 /AVRO/*.DS_Store
+/H2/spring-boot-jpa-test-h2/nbproject
+/Nats/nats-fx-listener/nb-configuration.xml
+/Nats/nats-fx-listener/nbactions.xml
+/Nats/nats-fx-listener-avro/nbactions.xml
+/Nats/nats-fx-listener-avro/nb-configuration.xml
