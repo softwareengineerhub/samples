@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.app.main;
+package com.app;
 
 import com.app.config.MySpringConfig;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +15,7 @@ import org.springframework.boot.SpringApplication;
 public class Main {
     
     public static void main(String[] args) {
-         SpringApplication.run(MySpringConfig.class, args);
+        SpringApplication.run(MySpringConfig.class, args);
     }
     
 }
