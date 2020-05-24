@@ -1,0 +1,430 @@
+{
+	"info": {
+		"_postman_id": "19f9d337-4f36-4a89-aec5-0160a279d550",
+		"name": "salesforce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "mysalesforce",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "00D5I000001YwsJ!AQgAQB5C4VrmicXgs.fB_qxgiG81qLJvR4rVtoUDydErmSZ6xZKXWXqG0JMS4fyCK4SS.xo6hpDhQGR5sLoox9hXkAjmrJD1",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\" : \"test\"\r\n}"
+				},
+				"url": {
+					"raw": "https://eu31.lightning.force.com/services/data/v20.0/sobjects/Account/",
+					"protocol": "https",
+					"host": [
+						"eu31",
+						"lightning",
+						"force",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v20.0",
+						"sobjects",
+						"Account",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_pss_token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "denys.prokopiuk@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Jk0508257123tba6OYhSPirFXCDpV4kGqwW8",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "3MVG9wEVwV0C9ejAB.lOaJKjz45.lUQW_Ah35zqoeluxqPsKhi3ga4RJYKeXJGSDJhERk2JGgspfjjWIO2amW",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "B88DD6282EA19A159683913341139B614C2D993D3127D841354F2353FE61D76F",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.salesforce.com/services/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatAccount",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5I000001YwsJ!AQgAQLS78ETjKHT4oZi_3nc0.A2Y7Iak1Y_CMIhjuRtKy6d2wSEvufY0C2qNf7mv.7oujwwDxXMd0PY2IDAVqa2c2O7KXda9",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\" : \"test3\"\r\n}"
+				},
+				"url": {
+					"raw": "https://eu31.salesforce.com/services/data/v20.0/sobjects/Account/",
+					"protocol": "https",
+					"host": [
+						"eu31",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v20.0",
+						"sobjects",
+						"Account",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5I000001YwsJ!AQgAQLS78ETjKHT4oZi_3nc0.A2Y7Iak1Y_CMIhjuRtKy6d2wSEvufY0C2qNf7mv.7oujwwDxXMd0PY2IDAVqa2c2O7KXda9",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\" : \"test\"\r\n}"
+				},
+				"url": {
+					"raw": "https://eu31.salesforce.com/services/data/v20.0/sobjects/Account/",
+					"protocol": "https",
+					"host": [
+						"eu31",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v20.0",
+						"sobjects",
+						"Account",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccountById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 00D5I000001YwsJ!AQgAQLS78ETjKHT4oZi_3nc0.A2Y7Iak1Y_CMIhjuRtKy6d2wSEvufY0C2qNf7mv.7oujwwDxXMd0PY2IDAVqa2c2O7KXda9"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\" : \"test\"\r\n}"
+				},
+				"url": {
+					"raw": "https://eu31.salesforce.com/services/data/v20.0/sobjects/Account/0015I000005yBJjQAM",
+					"protocol": "https",
+					"host": [
+						"eu31",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v20.0",
+						"sobjects",
+						"Account",
+						"0015I000005yBJjQAM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://eu31.salesforce.com/services/data/v20.0/sobjects/Account/ Copy Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5I000001YwsJ!AQgAQLS78ETjKHT4oZi_3nc0.A2Y7Iak1Y_CMIhjuRtKy6d2wSEvufY0C2qNf7mv.7oujwwDxXMd0PY2IDAVqa2c2O7KXda9",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\" : \"test\"\r\n}"
+				},
+				"url": {
+					"raw": "https://eu31.salesforce.com/services/data/v20.0/query/?q=SELECT+Name+From+Account+WHERE+Account.Name='test2'",
+					"protocol": "https",
+					"host": [
+						"eu31",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v20.0",
+						"query",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "SELECT+Name+From+Account+WHERE+Account.Name='test2'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccountIdByName",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5I000001YwsJ!AQgAQLS78ETjKHT4oZi_3nc0.A2Y7Iak1Y_CMIhjuRtKy6d2wSEvufY0C2qNf7mv.7oujwwDxXMd0PY2IDAVqa2c2O7KXda9",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\" : \"test\"\r\n}"
+				},
+				"url": {
+					"raw": "https://eu31.salesforce.com/services/data/v20.0/query/?q=SELECT+id+From+Account+WHERE+Account.Name='test'",
+					"protocol": "https",
+					"host": [
+						"eu31",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v20.0",
+						"query",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "SELECT+id+From+Account+WHERE+Account.Name='test'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccountCustomField",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 00D5I000001YwsJ!AQgAQLS78ETjKHT4oZi_3nc0.A2Y7Iak1Y_CMIhjuRtKy6d2wSEvufY0C2qNf7mv.7oujwwDxXMd0PY2IDAVqa2c2O7KXda9"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\" : \"test\"\r\n}"
+				},
+				"url": {
+					"raw": "https://eu31.salesforce.com/services/data/v20.0/query/?q=SELECT+My_Unit__c+From+Account+WHERE+Account.Name='simpleAccount'+OR+Account.Name='test'",
+					"protocol": "https",
+					"host": [
+						"eu31",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v20.0",
+						"query",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "SELECT+My_Unit__c+From+Account+WHERE+Account.Name='simpleAccount'+OR+Account.Name='test'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AssetByAccountName",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5I000001YwsJ!AQgAQLS78ETjKHT4oZi_3nc0.A2Y7Iak1Y_CMIhjuRtKy6d2wSEvufY0C2qNf7mv.7oujwwDxXMd0PY2IDAVqa2c2O7KXda9",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\" : \"test\"\r\n}"
+				},
+				"url": {
+					"raw": "https://eu31.salesforce.com/services/data/v20.0/query/?q=SELECT+name+From+Asset+WHERE+Account.Name='test'",
+					"protocol": "https",
+					"host": [
+						"eu31",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v20.0",
+						"query",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "SELECT+name+From+Asset+WHERE+Account.Name='test'"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
