@@ -17,7 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
         Flyway flyway = new Flyway();
-        flyway.setDataSource("jdbc:mysql://localhost:3306/my_flyway", "root", "*******");
+        flyway.setDataSource("jdbc:mysql://localhost:3306/my_flyway?useSSL=false", "root", "11111111");
         int result = flyway.migrate();
         System.out.println("result=" + result);
     }
