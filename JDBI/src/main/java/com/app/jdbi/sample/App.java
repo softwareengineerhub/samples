@@ -19,7 +19,7 @@ import org.skife.jdbi.v2.Handle;
 public class App {
 
     public static void main(String[] args) {
-        DBI dbi = new DBI("jdbc:mysql://localhost:3306/my_jpa", "root", "ManchesterCity15");
+        DBI dbi = new DBI("jdbc:mysql://localhost:3306/my_jpa?useSSL=false", "root", "11111111");
         Handle handle = dbi.open();
         handle.execute("INSERT INTO person(name, age) values(?,?)", "Denis", 30);
         List<Person> persons = handle.createQuery("SELECT * from person where name = :name").bind("name", "Denis").map(new BaseResultSetMapper<Person>() {

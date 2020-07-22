@@ -21,7 +21,7 @@ import org.skife.jdbi.v2.tweak.ResultSetMapper;
 public class SQLObjectAPI {
     
     public static void main(String[] args) {
-        DBI dbi = new DBI("jdbc:mysql://localhost:3306/my_jpa", "root", "ManchesterCity15");
+        DBI dbi = new DBI("jdbc:mysql://localhost:3306/my_jpa?useSSL=false", "root", "11111111");
         PersonDAO dao = dbi.open(PersonDAO.class);
         dbi.registerMapper(new ResultSetMapper<Person>() {
             @Override
