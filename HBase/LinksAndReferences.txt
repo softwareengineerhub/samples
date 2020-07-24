@@ -1,0 +1,33 @@
+1)Install:
+http://hbase.apache.org/
+
+2) Got to
+config/ndase-site.xml
+<configuration>
+<property>
+	<name>hbase.cluster.distributed</name>
+	<value>true</value>
+</property>
+<property>
+	<name>hbase.rootdir</name>
+	<value>hdfs://localhost:9000/hbase</value>
+</property>
+<property>
+	<name>hbase.zookeeper.property.dataDir</name>
+	<value>file:///E:\Soft\hbase-1.4.13\myzookeeper</value>
+</property>
+</configuration>
+
+
+3) Requires JDK8 and >
+Go to conf/hbase-env.cmd
+
+set HBASE_HOME=E:\Soft\hbase-1.4.13
+
+in cmd:
+jps
+will list all java processes related to Hadoop
+
+
+4) Access admin UI:
+http://localhost:16010/master-status
