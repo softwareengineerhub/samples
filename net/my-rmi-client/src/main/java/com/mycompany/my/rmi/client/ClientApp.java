@@ -18,9 +18,12 @@ import java.rmi.registry.Registry;
 public class ClientApp {
     
     public static void main(String[] args) throws Exception {
+
         Registry registry = LocateRegistry.getRegistry(1099);
         MyPersonService myPersonServer = (MyPersonService) registry.lookup("//127.0.0.1/MyPersonServer");
         System.out.println("Lookup: "+myPersonServer);
+
+
         Person person = new Person();
         person.setName("Name1");
         person.setAge(1);
