@@ -14,6 +14,6 @@ import java.rmi.RemoteException;
  */
 public interface MyPersonService extends Remote {
 
-    public MyServiceResponse process(Person person);
+    public MyServiceResponse process(Person person) throws RemoteException;
 
 }

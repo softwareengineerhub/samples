@@ -6,7 +6,6 @@
 package com.mycompany.rmi.common;
 
 import java.io.Serializable;
-import java.rmi.RemoteException;
 
 /**
  *

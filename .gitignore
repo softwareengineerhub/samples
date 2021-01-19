@@ -117,3 +117,4 @@ target/
 /Nats/nats-fx-listener/nbactions.xml
 /Nats/nats-fx-listener-avro/nbactions.xml
 /Nats/nats-fx-listener-avro/nb-configuration.xml
+/net/my-rmi-server/nbactions.xml

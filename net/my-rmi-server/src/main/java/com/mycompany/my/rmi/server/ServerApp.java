@@ -18,7 +18,8 @@ public class ServerApp {
  
     public static void main(String[] args) throws Exception {
         Registry registry = LocateRegistry.createRegistry(1099);
-        registry.rebind("//127.0.0.1/MyPersonServer", new MyPersonServiceImpl());
+        registry.bind("//127.0.0.1/MyPersonServer", new MyPersonServiceImpl());
+        //registry.rebind("//127.0.0.1/MyPersonServer", new MyPersonServiceImpl());
         //Naming.rebind("//127.0.0.1/MyPersonServer", new MyPersonServiceImpl());
         System.err.println("Server ready");
         Thread.sleep(Integer.MAX_VALUE);
