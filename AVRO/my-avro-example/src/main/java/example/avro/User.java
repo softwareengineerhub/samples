@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class User extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -3588479540582100558L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"example.avro\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"favorite_number\",\"type\":[\"int\",\"null\"]},{\"name\":\"favorite_color\",\"type\":[\"string\",\"null\"]}]}");
+  private static final long serialVersionUID = -1432419809200195840L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"example.avro\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"favorite_number\",\"type\":[\"int\",\"null\"]},{\"name\":\"favorite_color\",\"type\":[\"string\",\"null\"]},{\"name\":\"mytype\",\"type\":[\"bytes\",\"null\"]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -74,6 +74,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.Integer favorite_number;
   @Deprecated public java.lang.CharSequence favorite_color;
+  @Deprecated public java.nio.ByteBuffer mytype;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -87,11 +88,13 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
    * @param name The new value for name
    * @param favorite_number The new value for favorite_number
    * @param favorite_color The new value for favorite_color
+   * @param mytype The new value for mytype
    */
-  public User(java.lang.CharSequence name, java.lang.Integer favorite_number, java.lang.CharSequence favorite_color) {
+  public User(java.lang.CharSequence name, java.lang.Integer favorite_number, java.lang.CharSequence favorite_color, java.nio.ByteBuffer mytype) {
     this.name = name;
     this.favorite_number = favorite_number;
     this.favorite_color = favorite_color;
+    this.mytype = mytype;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -102,6 +105,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     case 0: return name;
     case 1: return favorite_number;
     case 2: return favorite_color;
+    case 3: return mytype;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -113,6 +117,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     case 0: name = (java.lang.CharSequence)value$; break;
     case 1: favorite_number = (java.lang.Integer)value$; break;
     case 2: favorite_color = (java.lang.CharSequence)value$; break;
+    case 3: mytype = (java.nio.ByteBuffer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -169,6 +174,23 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /**
+   * Gets the value of the 'mytype' field.
+   * @return The value of the 'mytype' field.
+   */
+  public java.nio.ByteBuffer getMytype() {
+    return mytype;
+  }
+
+
+  /**
+   * Sets the value of the 'mytype' field.
+   * @param value the value to set.
+   */
+  public void setMytype(java.nio.ByteBuffer value) {
+    this.mytype = value;
+  }
+
+  /**
    * Creates a new User RecordBuilder.
    * @return A new User RecordBuilder
    */
@@ -212,6 +234,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     private java.lang.CharSequence name;
     private java.lang.Integer favorite_number;
     private java.lang.CharSequence favorite_color;
+    private java.nio.ByteBuffer mytype;
 
     /** Creates a new Builder */
     private Builder() {
@@ -236,6 +259,10 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
         this.favorite_color = data().deepCopy(fields()[2].schema(), other.favorite_color);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
+      if (isValidValue(fields()[3], other.mytype)) {
+        this.mytype = data().deepCopy(fields()[3].schema(), other.mytype);
+        fieldSetFlags()[3] = other.fieldSetFlags()[3];
+      }
     }
 
     /**
@@ -255,6 +282,10 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       if (isValidValue(fields()[2], other.favorite_color)) {
         this.favorite_color = data().deepCopy(fields()[2].schema(), other.favorite_color);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.mytype)) {
+        this.mytype = data().deepCopy(fields()[3].schema(), other.mytype);
+        fieldSetFlags()[3] = true;
       }
     }
 
@@ -378,6 +409,46 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       return this;
     }
 
+    /**
+      * Gets the value of the 'mytype' field.
+      * @return The value.
+      */
+    public java.nio.ByteBuffer getMytype() {
+      return mytype;
+    }
+
+
+    /**
+      * Sets the value of the 'mytype' field.
+      * @param value The value of 'mytype'.
+      * @return This builder.
+      */
+    public example.avro.User.Builder setMytype(java.nio.ByteBuffer value) {
+      validate(fields()[3], value);
+      this.mytype = value;
+      fieldSetFlags()[3] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'mytype' field has been set.
+      * @return True if the 'mytype' field has been set, false otherwise.
+      */
+    public boolean hasMytype() {
+      return fieldSetFlags()[3];
+    }
+
+
+    /**
+      * Clears the value of the 'mytype' field.
+      * @return This builder.
+      */
+    public example.avro.User.Builder clearMytype() {
+      mytype = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public User build() {
@@ -386,6 +457,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
         record.name = fieldSetFlags()[0] ? this.name : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.favorite_number = fieldSetFlags()[1] ? this.favorite_number : (java.lang.Integer) defaultValue(fields()[1]);
         record.favorite_color = fieldSetFlags()[2] ? this.favorite_color : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.mytype = fieldSetFlags()[3] ? this.mytype : (java.nio.ByteBuffer) defaultValue(fields()[3]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -436,6 +508,14 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       out.writeString(this.favorite_color);
     }
 
+    if (this.mytype == null) {
+      out.writeIndex(1);
+      out.writeNull();
+    } else {
+      out.writeIndex(0);
+      out.writeBytes(this.mytype);
+    }
+
   }
 
   @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
@@ -459,8 +539,15 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
         this.favorite_color = in.readString(this.favorite_color instanceof Utf8 ? (Utf8)this.favorite_color : null);
       }
 
+      if (in.readIndex() != 0) {
+        in.readNull();
+        this.mytype = null;
+      } else {
+        this.mytype = in.readBytes(this.mytype);
+      }
+
     } else {
-      for (int i = 0; i < 3; i++) {
+      for (int i = 0; i < 4; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.name = in.readString(this.name instanceof Utf8 ? (Utf8)this.name : null);
@@ -481,6 +568,15 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
             this.favorite_color = null;
           } else {
             this.favorite_color = in.readString(this.favorite_color instanceof Utf8 ? (Utf8)this.favorite_color : null);
+          }
+          break;
+
+        case 3:
+          if (in.readIndex() != 0) {
+            in.readNull();
+            this.mytype = null;
+          } else {
+            this.mytype = in.readBytes(this.mytype);
           }
           break;
 
