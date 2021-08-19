@@ -1,0 +1,4 @@
+14:54:49.063 [main] ERROR - null
+java.lang.NullPointerException: null
+	at com.app.service.MyService.doAction(MyService.java:24)
+	at com.app.Main.main(Main.java:9)

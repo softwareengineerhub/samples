@@ -1,0 +1,20 @@
+package com.app;
+
+import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.LoggerContext;
+
+public class MyService {
+
+    public void doAction(){
+        System.setProperty("qqq", "a.log");
+        Logger logger = Logger.getLogger(Main.class);
+        logger.info("Welcome");
+
+        System.setProperty("qqq", "b.log");
+  //      LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
+//        context.reconfigure();
+        logger.info("Welcome2");
+    }
+
+}

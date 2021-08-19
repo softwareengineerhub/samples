@@ -1,0 +1,5 @@
+13:01:30.012 [main] DEBUG - MyDebug
+13:01:30.012 [main] INFO  - Hello, Denys
+13:01:30.022 [main] ERROR - Exception
+java.lang.NullPointerException: null
+	at com.app.Main.main(Main.java:15)
