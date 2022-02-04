@@ -1,0 +1,11 @@
+password: 11
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 8085
+    - type: https
+      port: 8443
+      keyStorePath: dropbookmarks.keystore
+      keyStorePassword: 11111111
+      validateCerts: false

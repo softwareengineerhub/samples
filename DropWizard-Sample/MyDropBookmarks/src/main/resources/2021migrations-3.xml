@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+    http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd ">
+
+    <changeSet id="2021migrations-3" author="denis" context="DEV">
+        <createTable tableName="MyPerson">
+            <column name="UserId" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ExtId" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AccountTypeId" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ApplicationId" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RecoveryType" type="VARCHAR(55)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RecoveryId" type="VARCHAR(128)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ExpirationTime" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CreatedDate" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LastModifiedDate" type="TIMESTAMP"/>
+            <column name="ModifiedBy" type="VARCHAR(55)"/>
+        </createTable>
+
+        <addPrimaryKey  columnNames="UserId, AccountTypeId, ApplicationId, ExtId, RecoveryType, RecoveryId" constraintName="PkMyPerson" tableName="MyPerson"/>
+        <addUniqueConstraint tableName="MyPerson" columnNames="RecoveryType,RecoveryId" constraintName="Unique_ExternalRecoveryId"/>
+
+
+    </changeSet>
+
+</databaseChangeLog>
