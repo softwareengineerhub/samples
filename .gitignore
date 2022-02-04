@@ -118,3 +118,5 @@ target/
 /Nats/nats-fx-listener-avro/nbactions.xml
 /Nats/nats-fx-listener-avro/nb-configuration.xml
 /net/my-rmi-server/nbactions.xml
+/Log4j/my-log4j2-app/a.log
+/Log4j/my-log4j2-app/b.log
