@@ -1,0 +1,1 @@
+java -javaagent:advanced-java-agent.jar -jar agent-client.jar
