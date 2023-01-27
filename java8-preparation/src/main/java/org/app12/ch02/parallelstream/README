@@ -1,0 +1,21 @@
+1) Associative Operations
+The point is, just as with sequential stream reductions, parallel stream
+reductions need to be associative. This is even more important for parallel
+streams given that we don’t know how the system will split up and then
+recombine the stream results.
+
+2) Stateless Operations (and Streams)
+A stateless operation in a stream pipeline is an operation that does not depend
+on the context in which it’s operating. Before we talk more about what
+stateless operations are, let’s talk about what they are not.
+There are two main ways you can create a stateful stream pipeline. The
+first is with side effects
+
+side effects
+occur when your result creates or depends on changes to state in the pipeline
+
+for example filter stream and count numbers%10;
+in parallel stream it will tend to errors. (or you need to create synch block)
+
+
+? effectively final
