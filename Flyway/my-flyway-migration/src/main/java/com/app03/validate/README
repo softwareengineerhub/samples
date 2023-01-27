@@ -1,0 +1,12 @@
+VALIDATE:
+mvn flyway:validate
+checks with help of checksums available migrations vs applied
+Provides failed validation if we have some scripts that were not applied yet.
+
+ For example:
+ ValidateOutput:
+ 		version=5
+ 		description=Insert third into person table
+ 		filepath=/Users/denis/IdeaProjects/my-flyway-migration/target/classes/db/migration/V5__Insert_third_into_person_table.sql
+ 		errorDetails=RESOLVED_VERSIONED_MIGRATION_NOT_APPLIED; Detected resolved migration not applied to database: 5.
+ To fix this error, either run migrate, or set -ignorePendingMigrations=true.

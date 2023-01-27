@@ -1,6 +1,10 @@
 .idea/
 target/
+build/
+gradle/
+.gradle/
 *.iml
+*.DS_Store
 /Cache/JCache/jcache-app/target
 /Cache/JCache/CacheAnotations/target
 /Cache/JCache/CacheAnotations/nb-configuration.xml
@@ -120,3 +124,4 @@ target/
 /net/my-rmi-server/nbactions.xml
 /Log4j/my-log4j2-app/a.log
 /Log4j/my-log4j2-app/b.log
+/java8-preparation

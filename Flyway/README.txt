@@ -1,0 +1,1 @@
+MYSQL-flyway has problems in app02

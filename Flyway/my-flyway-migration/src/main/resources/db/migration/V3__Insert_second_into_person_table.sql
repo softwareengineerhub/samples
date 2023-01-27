@@ -1,0 +1,1 @@
+insert into person(ID, name) VALUES (2, 'Name2');
