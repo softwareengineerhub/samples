@@ -90,6 +90,12 @@
           <url>jdbc:postgresql://127.0.0.1:5440/mydb</url>
           <user>user</user>
           <password>11111111</password>
+          <schemas>
+            <schema>public</schema>
+          </schemas>
+          <locations>
+            <location>classpath:db/migration</location>
+          </locations>
         </configuration>
         <dependencies>
           <dependency>
