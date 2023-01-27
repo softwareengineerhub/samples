@@ -1,0 +1,24 @@
+Java migrations:
+mvn compile
+mvn flyway:migrate // looks like not working
+need to run from Java code
+
+
+
+Java classes that must placed in package: db.migration
+If not in this package --> the migration (java) will be ignored
+
+
+For Java migrations
+Type - JDBC
+checksum - null
+ +-----------+---------+---------------------------------+------+---------------------+---------+
+| Category  | Version | Description                     | Type | Installed On        | State   |
++-----------+---------+---------------------------------+------+---------------------+---------+
+| Versioned | 1       | Create person table             | SQL  | 2023-01-25 23:36:20 | Success |
+| Versioned | 2       | Insert into person table        | SQL  | 2023-01-25 23:36:20 | Success |
+| Versioned | 3       | Insert second into person table | SQL  | 2023-01-25 23:36:21 | Success |
+| Versioned | 5       | Insert third into person table  | SQL  | 2023-01-25 23:36:21 | Success |
+| Versioned | 6       | Insert fourth into person table | SQL  | 2023-01-25 23:36:21 | Success |
+| Versioned | 7       | Person data update              | JDBC | 2023-01-25 23:40:55 | Future  |
++-----------+---------+---------------------------------+------+---------------------+---------+

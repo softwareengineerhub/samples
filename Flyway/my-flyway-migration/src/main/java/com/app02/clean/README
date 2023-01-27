@@ -1,0 +1,5 @@
+CLEAN:
+mvn flyway:clean
+removes all data and tables from db
+
+

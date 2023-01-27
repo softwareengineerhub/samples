@@ -1,0 +1,11 @@
+MIGRATE:
+mvn flyway:migrate
+trys to apply all scripts
+
+1) if no 1 script was applied yet - it is ok
+2) if v5 was already applied and we want to add v3 script --> error
+3) we want to add new script --> it is ok
+
+Also metainfo is added into table: flyway_schema_history
+
+

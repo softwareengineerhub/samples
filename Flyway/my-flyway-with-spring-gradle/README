@@ -1,0 +1,9 @@
+./gradlew -Pflyway.url=jdbc:postgresql://127.0.0.1:5440/mydb
+
+
+./gradlew flywayMigrate
+./gradlew flywayInfo
+ In case you want to override flyway configuration (for example url)
+./gradlew -Pflyway.url=jdbc:postgresql://127.0.0.1:5440/mydb flywayMigrate
+
+Also you can run flyway from IntellijIDEA --> Gradle --> Tasks --> flyway --> flywayInfo

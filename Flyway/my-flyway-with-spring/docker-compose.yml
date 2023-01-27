@@ -1,0 +1,14 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  mypostgres-myflyway-with-spring:
+    image: inx.dockreg.net/multi-user-postgres:3.0.8
+    restart: always
+    ports:
+      - "5440:5432"
+    environment:
+      POSTGRES_PASSWORD: 11111111
+      POSTGRES_USER: user
+      POSTGRES_DB: mydb

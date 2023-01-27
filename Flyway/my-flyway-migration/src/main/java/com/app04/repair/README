@@ -1,0 +1,11 @@
+REPAIR:
+mvn flyway:repair
+checks with help of checksums current version of db vs expected accoring to scripts
+If it same --> ok
+If it is not --> updates db with correct metainfo
+
+ For example:
+ [INFO] Database: jdbc:postgresql://127.0.0.1:5439/mydb (PostgreSQL 14.2)
+ [INFO] Repair of failed migration in Schema History table "public"."flyway_schema_history" not necessary. No failed migration detected.
+ [INFO] Repairing Schema History table for version 5 (Description: Insert third into person table, Type: SQL, Checksum: -332068212)  ...
+ [INFO] Successfully repaired schema history table "public"."flyway_schema_history" (execution time 00:00.038s).
