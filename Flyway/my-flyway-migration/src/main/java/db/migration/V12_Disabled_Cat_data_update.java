@@ -10,7 +10,7 @@ import java.util.UUID;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 
-public class V12__Cat_data_update extends BaseJavaMigration {
+public class V12_Disabled_Cat_data_update extends BaseJavaMigration {
 
   @Override
   public void migrate(Context context) throws Exception {
