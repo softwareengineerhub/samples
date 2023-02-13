@@ -99,7 +99,101 @@ d) LinkedTransferQueue
 4) CyclicBarrier - check code coma.book.ch11.concur.app02.MyCyclicBarrier
 p. 1173
 
+-----------------------------------
+Executors:
+To create pool dynamically:
+ExecutorService executorService = Executors.newFixedThreadPool(4);
+        ThreadPoolExecutor tpe = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
+        tpe.setCorePoolSize(4);
+        tpe.setMaximumPoolSize(8);
+
+--------------------------------------
+Callable and Future
+To get result of Callable: future.get()-->
+you need to handle 2 exceptions:
+    -InterruptedException Raised when the thread calling the Future’s
+        get() method is interrupted before a result can be returned
+    -ExecutionException Raised when an exception was thrown during
+        the execution of the Callable’s call() method
+
+Future<String> res = executorService.submit(() -> "Test");
+        try {
+            String text = res.get();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } catch (ExecutionException e) {
+            throw new RuntimeException(e);
+        }
+
+-----------------------------------------------
+java.util.concurrent.ThreadLocalRandom
+ Math.random() - is thread-safe, but suffers when multithreaded
+ A ThreadLocalRandom is unique to a thread and will perform better because it avoids any contention.
+ Might have same values:
+ThreadLocalRandom random = ThreadLocalRandom.current();
+        for(int i=0;i<10;i++) {
+            int res = random.nextInt(0, 10);
+            System.out.println(res);
+        }
 
 
+-----------------------------------------------
+Close Executor:
+- void executorService.shutdown(); - graceful shutdown
+    will not stop already submitted tasks, but will not accept new tasks
+- List<Runnable> executorService.shutdownNow(); - immediate shutdown.
+Will typically call Thread.interrupt() in an attempt to terminate any unfinished tasks.
 
+
+-------------------------------------------------------
+ForkJoinPool
+        ForkJoinPool.commonPool();
+        new ForkJoinPool();
+        new ForkJoinPool(10);
+        int p = Runtime.getRuntime().availableProcessors();
+
+Fork:
+With the Fork/Join Framework, each thread in the ForkJoinPool has a
+queue of the tasks it is working on; this is unlike most ExecutorService
+implementations that have a single shared task queue. The fork() method
+places a ForkJoinTask in the current thread’s task queue. A normal thread
+does not have a queue of tasks—only the specialized threads in a
+ForkJoinPool do. This means that you can only call fork() if you are within
+a ForkJoinTask that is being executed by a ForkJoinPool.
+
+Join:
+When you call join() on the (left) task, it should be one of the last steps in
+the compute method, after calling fork() and compute(). Calling join()
+says, “I can only proceed when this (left) task is done.” Several possible
+things can happen when you call join():
+The task you call join() on might already be done. Remember you
+are calling join() on a task that already had fork() called. The task
+might have been stolen and completed by another thread. In this case,
+calling join() just verifies the task is complete and you can continue
+on.
+The task you call join() on might be in the middle of being
+processed. Another thread could have stolen the task, and you’ll have
+to wait until the joined task is done before continuing.
+The task you call join() on might still be in the queue (not stolen). In
+this case, the thread calling join() will execute the joined task.
+
+RecursiveAction:
+protected abstract void compute();
+
+RecursiveTask:
+protected abstract V compute();
+
+FJP.invoke(RecursiveAction or RecursiveTask) - blocking method;
+
+-------------------------------------------------------
+Parallel streams
+
+List<Integer> nums =...;
+Stream<Integer> myStream = nums.parallelStream();
+
+ForkJoinPool fjp = new ForkJoinPool(2);
+fjp.submit(Stream<Integer> myStream = nums.parallelStream(););
+
+
+Associative Operations - p.1212
 
