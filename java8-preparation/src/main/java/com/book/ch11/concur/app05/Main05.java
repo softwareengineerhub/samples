@@ -9,6 +9,7 @@ public class Main05 {
         new ForkJoinPool();
         new ForkJoinPool(10);
         int p = Runtime.getRuntime().availableProcessors();
+
     }
 
 }
