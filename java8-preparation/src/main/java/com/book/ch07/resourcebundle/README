@@ -1,0 +1,30 @@
+1) ResourceBundle sb = ResourceBundle.getBundle("data2");
+if no file data2.properties --> Runtime: java.util.MissingResourceException();
+Can't find bundle for base name data2
+
+
+2) Add Locale:
+ResourceBundle sb = ResourceBundle.getBundle("data2", Locale.ITALY);
+a) data_it_IT.properties if no such file -->
+b) data_it.properties if no such file -->
+c) data.properties
+
+3) If Locale only has language like Locale.FRENCH
+we skip a)
+b) data_it.properties if no such file -->
+c) data.properties
+
+4) if Locale has different language and country:
+Locale locale = new Locale("it", "FR");
+a) data_it_FR.properties if no such file -->
+b) data_it.properties if no such file -->
+c) data.properties
+
+
+5) if Locale has only country:
+a) skip
+b) skip
+c) data.properties
+
+
+

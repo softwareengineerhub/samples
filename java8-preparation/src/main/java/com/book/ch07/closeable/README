@@ -1,0 +1,5 @@
+AutoCloseable
+public void close() throws Exception
+
+Closeable extends Closeable
+public void close() throws IOException
