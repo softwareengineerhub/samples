@@ -1,0 +1,27 @@
+1.c+
+2.C+
+3.A,D+
+4.A,C+- (C)
+5.A,B- (C)
+6.C+
+7.D+
+8.A,B+
+9.E,D+
+10.D+
+11.B+
+12.C+
+13.B,H+
+14.A- (D)
+15.A,B,C,D+- (A,E)
+16.C+
+17.d- (b)
+18.B+
+19.C+
+----------------------
+//map.remove(k,v) - removes only in case value alos matches
+10. If lock not yet locked --> IllegalMonitorStetException
+14. FJP:
+has method fjp.invokeAll(Collection) - returns List<Future<T>>
+15.
+-fork() and join() should be called on the same task
+-fork() should be called before compute()
