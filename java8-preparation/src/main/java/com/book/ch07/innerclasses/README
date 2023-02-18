@@ -1,0 +1,23 @@
+1) To have instance of Inner class we must:
+    a) in case we use it inside our class
+    MyInner myInner = new MyInner();
+
+    b) outside:
+    MyClass class = new MyClass();
+    class.new MyInner();
+    or
+    MyClass.MyInner inner = new MyClass(). new MyInner();
+
+2) In case we want to have static inner class--> we do not need instance of Outer class
+    MyClass.MyInner inner = new MyClass.MyInner();
+
+3) We can define InnerClass inside method.
+We can use global variables inside,
+but we can not use method variables (only allowed in case they are final)
+inner classes inside methods could be final/abstract
+In case method is static --> InnerClass can use only static fields and methods of OuterClass
+
+4) MyOuter.this - gives reference to instance of OuterClass
+
+
+5) inner class might be private

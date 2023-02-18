@@ -87,7 +87,6 @@ public void rethrow() throws SQLException, IOException {
     }
 
 
-
 7.
 Compilation issue in throw e:
 public void rethrow() throws SQLException, IOException {
