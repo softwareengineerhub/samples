@@ -1,4 +1,4 @@
-package com.book.ch07.closeable;
+package com.book.ch04.closeable;
 
 public class MainApp {
 

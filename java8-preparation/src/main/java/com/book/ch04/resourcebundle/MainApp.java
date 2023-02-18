@@ -1,4 +1,4 @@
-package com.book.ch07.resourcebundle;
+package com.book.ch04.resourcebundle;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

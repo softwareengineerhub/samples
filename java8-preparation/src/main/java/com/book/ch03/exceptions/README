@@ -1,0 +1,101 @@
+
+1. Correct
+try{
+
+} catch(SQLException | IOException e){
+    handleErrorCase(e);
+}
+
+
+2. Order of Exceptions in catch does not matter: Correct
+
+try{
+
+} catch(IOException | SQLException e){
+    handleErrorCase(e);
+}
+
+
+3. Exception must be same level of hierarchy:
+Not Compile:
+catch(FileNotFoundException | IOException e){
+    handleErrorCase(e);
+}
+
+
+
+4. Multi-catch and catch Parameter Assignment. Correct
+try {
+
+} catch(IOException e){
+    e = new IOException();
+}
+
+
+5. Not correct
+try{
+
+} catch(IOException | SQLException e){
+    e = new IOException();
+}
+
+
+
+6. Sine Java7 next is possible:
+At the risk of being too repetitive, remember that catch (Exception e)
+doesn’t necessarily catch all Exception subclasses. In Java 7 and later, it
+means catch all Exception subclasses that would allow the method to
+compile.
+
+Correct:
+public void rethrow() throws SQLException, IOException {
+        try{
+
+        }catch(Exception ex){
+            throw ex;
+        }
+    }
+
+Correct:
+public void rethrow() throws SQLException {
+        try{
+
+        }catch(Exception ex){
+            throw ex;
+        }
+    }
+
+
+Not Correct: Compilation issue
+public void rethrow() throws SQLException, IOException {
+        try{
+
+        } catch(SQLException | IOException ex){
+            throw ex;
+        }
+
+    }
+
+Not Correct: Compilation issue
+public void rethrow() throws SQLException, IOException {
+        try{
+
+        }catch(IOException ex){
+            throw ex;
+        }
+
+    }
+
+
+
+7.
+Compilation issue in throw e:
+public void rethrow() throws SQLException, IOException {
+        try{
+
+        }catch(Exception ex){
+            ex = new IOException();
+            throw ex;
+        }
+
+    }
