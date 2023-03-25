@@ -1,0 +1,16 @@
+Stateful operations req context
+for exampleL stream.limit()
+
+
+Make sure your reductions are associative and stateless.
+Avoid side effects.
+Make sure your pipeline is stateless by avoiding contextual operations
+such as limit(), skip(), distinct(), and sorted().
+
+
+reductions are associative:
+f(a+b+c)!=f(a)+f(b)+f(c)
+for example square
+
+
+(A operator B) operator C = A operator (B operator C)
