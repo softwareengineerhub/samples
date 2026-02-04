@@ -1,0 +1,9 @@
+CREATE SCHEMA `equations` ;
+
+CREATE TABLE `equations`.`equation` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `expression` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+

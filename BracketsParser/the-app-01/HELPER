@@ -1,0 +1,17 @@
+/*if(leftHasVariable && !rightHasVariable){
+            return true;
+        }
+        if(rightHasVariable && !leftHasVariable){
+            return true;
+        }
+
+        return false;*/
+
+        return leftHasVariable^rightHasVariable;
+        /*
+        left right ^
+        true true  false
+        true false true
+        false true  true
+        false false false
+         */
