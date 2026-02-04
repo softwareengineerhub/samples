@@ -1,5 +1,5 @@
 AutoCloseable
 public void close() throws Exception
 
-Closeable extends Closeable
+Closeable extends AutoCloseable
 public void close() throws IOException

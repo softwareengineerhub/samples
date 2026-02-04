@@ -5,7 +5,7 @@ import java.sql.*;
 public class AppStarter02 {
 
     public static void main(String[] args) throws SQLException {
-        m3();
+        m2();
     }
 
     private static void m3() throws SQLException {
