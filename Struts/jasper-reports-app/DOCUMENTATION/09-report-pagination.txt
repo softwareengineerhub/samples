@@ -1,0 +1,7 @@
+Pagination in JasperReports controls how records are split across multiple pages in the generated report (PDF, HTML, etc.).
+Each page has a page header and page footer.
+Records in the detail band are automatically split across pages when the page height is exceeded.
+You can force page breaks or control where new pages start using:
+Page breaks in JRXML
+Band attributes like splitType
+Group-level isStartNewPage

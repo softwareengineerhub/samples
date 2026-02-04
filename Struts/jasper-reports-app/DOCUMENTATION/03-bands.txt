@@ -1,0 +1,24 @@
+
+| Band       | Purpose             |
+| ---------- | ------------------- |
+| Title      | Printed once        |
+| PageHeader | Every page          |
+| Detail     | Repeats per record  |
+| Summary    | Printed once at end |
+
+
+--------------------------------
+Evaluation ordering:
+--------------------------------
+Title (once)
+Page Header (per page)
+
+Group Header (when group changes)
+
+Detail (for each record)
+
+Group Footer (when group ends)
+
+Page Footer (per page)
+Summary (once)
+

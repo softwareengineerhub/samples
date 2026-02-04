@@ -1,0 +1,14 @@
+1) Steep Learning Curve
+
+2) Poor Debugging Experience:
+Error messages and stack trace could be not informative:
+Error evaluating expression for source text
+
+3) Performance issue on large reports
+-memory-hungry
+out of memory if:
+    a) Reports are not paginated properly
+    b) Virtualization is not enabled
+-pdf generation could be slow
+- hard to maintain xml configuration (git history)
+- limited web design with help of Studio

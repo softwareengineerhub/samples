@@ -1,0 +1,40 @@
+1) Report template (xml based) .jrxml
+XML file that defines layout, SQL query, Fields, parameters, variables
+
+Designed using JasperSoft Studio
+
+2) Jasper File (.jasper)
+Compiled (binary version of .jrxml)
+
+3) Datasource:
+JRResultSetDataSource
+
+4) Parameters
+-inputs passed to report (date range)
+
+5) Fields
+-columns from datasource
+
+Example:
+$F{id} - field from datasource
+$P{param} - Parameter passed from Java
+$V{var} - Variable (sum, count, etc..)
+
+
+Parameters example:
+<parameter name="companyName" class="java.lang.String"/>
+<textField>
+    <textFieldExpression><![CDATA[$P{companyName}]]></textFieldExpression>
+</textField>
+
+Map<String, Object> params = new HashMap<>();
+params.put("companyName", "ACME Corp");
+
+JasperFillManager.fillReport(jasperReport, params, dataSource);
+
+
+Variables example:
+<variable name="totalSalary" class="java.lang.Double"
+          calculation="Sum">
+    <variableExpression><![CDATA[$F{salary}]]></variableExpression>
+</variable>

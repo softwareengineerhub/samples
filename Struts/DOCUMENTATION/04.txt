@@ -1,0 +1,14 @@
+Q01: What is the Struts 2 request lifecycle?
+Answer:
+
+Request hits FilterDispatcher
+ActionMapper selects action
+Interceptors execute
+Action executes
+Result executes
+Response returned
+
+
+Q02: How does exception handling work?
+Answer:
+Using ExceptionMappingInterceptor.

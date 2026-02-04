@@ -5,20 +5,21 @@
  */
 package com.simpleprogrammer.actions;
 
-import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
 
 /**
  *
  * @author asusadmin
  */
-public class HelloAction implements Action {
+public class HelloAction2 extends ActionSupport {
 
     private String greeting;
 
+    
     @Override
-    public String execute() throws Exception {
-       
+    public String execute() {
+        ActionContext ctx = null;
         greeting = "Hello Struts 2";
         System.out.println("Greeting="+greeting+"; hash="+hashCode());
         return "success";

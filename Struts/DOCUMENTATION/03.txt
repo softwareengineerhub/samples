@@ -1,0 +1,150 @@
+Below is a clear, practical explanation of the ValueStack in Struts 2, with working examples and step-by-step flow.
+This is straight from how Struts 2 actually works internally.
+
+🔹 What is ValueStack?
+
+ValueStack is a data structure that:
+
+Holds Action objects
+
+Holds model objects
+
+Is the default data source for OGNL expressions
+
+📌 Every request in Struts 2 has one ValueStack.
+
+🔹 Simple Definition
+
+ValueStack = where Struts stores objects so JSP / OGNL can access them
+
+🔹 ValueStack Structure (Conceptual)
+Top of Stack
+ ┌─────────────────────┐
+ │ Action object       │  ← highest priority
+ ├─────────────────────┤
+ │ Model / POJO        │
+ ├─────────────────────┤
+ │ Previous actions    │
+ ├─────────────────────┤
+ │ Context Map         │
+ └─────────────────────┘
+Bottom of Stack
+
+
+Struts searches from top to bottom when resolving values.
+
+🔹 Example 1: Simple Action + ValueStack
+Action class
+package com.example.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class HelloAction extends ActionSupport {
+
+    private String message;
+
+    public String execute() {
+        message = "Hello from ValueStack";
+        return SUCCESS;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+}
+
+What happens?
+
+HelloAction object is pushed onto the ValueStack
+
+message becomes accessible
+
+JSP using ValueStack (OGNL)
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
+<h2>
+    <s:property value="message"/>
+</h2>
+
+How OGNL works here
+message → found in HelloAction → printed
+
+
+✔️ No request/session attribute needed.
+
+🔹 Example 2: ValueStack with Model Object
+POJO (Model)
+public class User {
+    private String name;
+    private int age;
+
+    // getters and setters
+}
+
+Action
+public class UserAction extends ActionSupport {
+
+    private User user = new User();
+
+    public String execute() {
+        user.setName("Alice");
+        user.setAge(25);
+        return SUCCESS;
+    }
+
+    public User getUser() {
+        return user;
+    }
+}
+
+JSP
+<s:property value="user.name"/>
+<s:property value="user.age"/>
+
+ValueStack lookup
+user → found in Action
+name → found in User
+
+🔹 Example 3: Using ModelDriven (VERY COMMON)
+Action implements ModelDriven
+public class LoginAction extends ActionSupport
+        implements ModelDriven<User> {
+
+    private User user = new User();
+
+    public User getModel() {
+        return user;
+    }
+
+    public String execute() {
+        user.setName("Admin");
+        return SUCCESS;
+    }
+}
+
+JSP (cleaner!)
+<s:property value="name"/>
+
+Why?
+
+The model object is pushed on TOP of ValueStack
+
+No need to write user.name
+
+📌 Priority:
+
+User (model) → Action → others
+
+🔹 Example 4: Accessing ValueStack Directly (Advanced)
+Action
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.util.ValueStack;
+
+public String execute() {
+    ValueStack stack = ActionContext.getContext().getValueStack();
+    stack.set("city", "London");
+    return SUCCESS;
+}
+
+JSP
+<s:property value="city"/>

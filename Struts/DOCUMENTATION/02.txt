@@ -1,0 +1,50 @@
+
+
+Thread model:
+New Action objects are created for each request.
+Each Action object is saved in Value Stack.
+(Each HTTP request has its own ValueStack)
+And then it could be accessed in JSP
+
+
+ValueStack is request-scoped and thread-safe because it is stored inside ActionContext, 
+which is maintained in a ThreadLocal. 
+Each request thread gets its own ActionContext and therefore its own ValueStack.
+
+ValueStack stack =
+    ActionContext.getContext().getValueStack();
+Is ValueStack ThreadLocal?
+
+Indirectly, YES.
+
+ValueStack itself is NOT a ThreadLocal
+
+ActionContext is ThreadLocal
+
+ValueStack lives inside ActionContext
+
+👉 Therefore:
+
+Each request (thread) gets its own ValueStack
+
+🔹 Actual Architecture
+Thread relationship
+HTTP Request
+   ↓
+Servlet Container Thread
+   ↓
+ActionContext (ThreadLocal)
+   ↓
+ValueStack
+
+------------------
+
+HTTP Request
+    ↓
+Thread (T1)
+    ↓
+ThreadLocal<ActionContext>
+    ↓
+ActionContext
+    ↓
+ValueStack

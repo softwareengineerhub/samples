@@ -1,0 +1,76 @@
+org.apache.maven.archetypes
+maven-archetype-webapp
+RELEASE
+
+
+Struts MVC:
+Web->ControllerFilterDispatcher --> Model Action --> View result
+
+client->Interceptors->Struts XML
+
+Action class
+JSP
+
+1) Interceptor
+Every action has its own stack of interceptors.
+They are invoked befor and after action (before action and after result)
+separate and reuse these crosscutting concerns ????
+
+2) ValueStack
+it is simply a storage area that holds all of the application domain data
+associated with the processing of a request.
+Data is moved to the ValueStack in preparation of request processing, it is manipulated there during action execution.
+And it is read from there when the results render their response pages.
+It slices through the whole length of the framework 
+because it is stored in ThreadLocal context called the ActionContext.
+You can call ValueStack in Interception, Action or result
+
+ActionContext ctx = null;
+   ctx.getValueStack()
+
+3) OGNL is expression language that allows you to reference and manupilate the data on the ValueStack.
+Usually you do not touch ActionContext(ValueStack) directly, but with help of OGNL.
+
+Chapter 2
+2.1) Auto Configuration (by default Struts 2 looks for URLs ending with .action .do - for struts1)
+2.2) Declaring application's architecture.
+You can make configurations in xml or Java annotations.
+Typically, you only need to implement actions and wire them to built-in results and interceptors.
+2.3) Decalring with XML or Annotations
+<action name="Login" class="manning.Login">
+ <result>/AccountPage.jsp</result>
+ <result name="input">/Login.jsp</result>
+ </action>
+
+ <action name="Registration" >
+ <result>/Registration.jsp</result>
+ </action>
+ <action name="Register" class="manning.Register">
+ <result>/RegistrationSuccess.jsp</result>
+ <result name="input">/Registration.jsp</result>
+ </action>
+ 
+ @Results({
+ @Result(name="input", value="/RegistrationSuccess.jsp" )
+ @Result(value="/RegistrationSuccess.jsp" )
+ })
+ public class Login {
+
+ public string execute() { 
+
+2.4) Hello world example:
+http://localhost:8080/manningSampleApp/Menu.action 
+ 
+p.31
+
+Youtube:
+https://www.youtube.com/watch?v=R6n511ZC50Q&list=PLB7BB551126EDD5E0&index=14
+implement Action 
+public String execute(){
+
+we can use class ActionSupport
+it has same 
+String execute()
++
+additioonal methods like validate()
+

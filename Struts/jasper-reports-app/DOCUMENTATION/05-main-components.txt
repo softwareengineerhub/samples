@@ -1,0 +1,13 @@
+| Component  | Purpose              |
+| ---------- | -------------------- |
+| JRXML      | Template             |
+| Fields     | Data from datasource |
+| Parameters | Input values         |
+| Variables  | Calculations         |
+| Bands      | Layout sections      |
+| DataSource | Data provider        |
+
+
+JasperReport jasperReport
+JasperPrint jasperPrint
+JasperExportManager

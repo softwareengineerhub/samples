@@ -1,0 +1,13 @@
+Virtualization in JasperReports
+Virtualization in JasperReports is a mechanism to handle very large reports efficiently by not keeping the entire report in memory at once.
+
+Think of it as lazy loading / on-demand report generation.
+🔹 Why virtualization is needed
+By default, JasperReports stores the entire filled report in memory (JasperPrint).
+For small reports, this is fine.
+For large reports (100,000+ rows), this can cause OutOfMemoryError.
+
+Virtualization solves this by:
+Keeping only a portion of the report in memory
+Writing the rest to temporary disk storage
+Allowing exporting large reports to PDF/Excel without crashing JVM

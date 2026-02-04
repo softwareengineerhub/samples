@@ -3,11 +3,33 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
+    
+    <!-- /subpath/hello.action-->
+    <!--<package name="main" namespace="/subpath" extends="struts-default">-->
+                
     <package name="main" extends="struts-default">
         
         <action name="hello" class="com.simpleprogrammer.actions.HelloAction">
             <result name="success">/hello.jsp</result>
         </action>
-                
+        
+        <!-- uses ActionSupport class -->
+        <action name="hello2" class="com.simpleprogrammer.actions.HelloAction2">
+            <result name="success">/hello.jsp</result>
+        </action>
+        
+        <action name="tutorial" class="com.simpleprogrammer.actions.TutorialAction">
+            <result name="success">/success.jsp</result>
+            <result name="failure">/failure.jsp</result>
+        </action>
+        
+        <action name="player" class="com.simpleprogrammer.actions.PlayerAction">
+            <result name="success">/player.jsp</result>
+        </action>
+        
     </package>
+    
+    
+    
+   
 </struts>

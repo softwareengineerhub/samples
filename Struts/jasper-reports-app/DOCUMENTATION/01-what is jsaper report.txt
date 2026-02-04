@@ -1,0 +1,15 @@
+Java-based reporting engine used to generate PDF, Excel, HTML, CSV.
+    SQL data+report template --> formatted report
+
+You can feel data from:
+JDBC (RESULT SET)
+JavaBeans
+Collections
+XML/JSON
+
+
+Jasper reports does NOT create data
+It only formats and renders data.
+
+Java=data
+Jasper=presentation

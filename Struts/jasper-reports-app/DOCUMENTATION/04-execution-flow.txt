@@ -1,0 +1,18 @@
+JRXML
+  ↓ (compile)
+JasperReport
+  ↓ (fill with JDBC)
+JasperPrint
+  ↓ (export)
+PDF
+
+
+
+| Concept      | Explanation                   |
+| ------------ | ----------------------------- |
+| JRXML        | Report layout + SQL           |
+| JasperReport | Compiled template             |
+| JasperPrint  | Filled report (data + layout) |
+| Fields       | Must match SQL columns        |
+| Parameters   | Passed from Java              |
+| JDBC         | Used by Jasper to fetch data  |
