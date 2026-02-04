@@ -1,0 +1,5 @@
+1) time split scheduling
+2) tasks could be processor intensive (in memory calculation)
+3) tasks could be IO intensive (read from file/db)
+In this case thread might be in a waiting state
+Some IO operations will cause thread to block/wait

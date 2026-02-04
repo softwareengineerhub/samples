@@ -1,0 +1,6 @@
+There is a constructor to specify pool size, BlockingQueue, ErrorHanlder, etc...
+
+Executors.newFixedThreadPool(1);
+        //return new ThreadPoolExecutor(nThreads, nThreads,
+        //                                      0L, TimeUnit.MILLISECONDS,
+        //                                      new LinkedBlockingQueue<Runnable>());

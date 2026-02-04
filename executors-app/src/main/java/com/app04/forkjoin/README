@@ -1,0 +1,34 @@
+1) On the 1 hand it is same as ExecutorPool
+
+But tasks can produce subtasks (fork-join)
+
+TaskA
+  SubA1   SubA2  SubA3
+result
+
+Each sub task might be calculated on separate core.
+So, all sub-tasks might be running in ||
+
+Then all results add/aggregated/joined to result
+
+
+2) ForJoinPool has concept of work stealing and per thread queueing
+When we call fork (create sub-task) - new task is created not for ALL THREADS POOL,
+but task is added to personal Dequeue for Thread
+
+Work stealing:
+Suppose we have 2 Threads
+T1 - produces many tasks
+T2 - already completed its jobs
+So, T2 can help T1 and take some task from dequeue of T2
+
+
+3) To start task you migh call:
+From Executor
+3.1) execute(Runnable)
+3.2) submit(Runnable)
+3.3) submit(Callable)
+From ForkJoin:
+3.4) execute(ForkJoinTask) - arrange asynch execution
+3.4) invoke(ForkJoinTask) - awaits and returns result (blocking)
+3.4) submit(ForkJoinTask) - returns Future

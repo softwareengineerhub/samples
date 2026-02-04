@@ -1,0 +1,16 @@
+1)FixedThreadPool
+Executors.newFixedThreadPool(1);
+submit tasks to BlockingQueue
+Threads take tasks from Queue, so executed one after another
+
+2) cachedThreadPool
+Executors.newCachedThreadPool();
+submits task, if no threads are available--> create new thread
+If thread is not used within 60 seconds --> kill thread (idle time)
+
+3) scheduledThreadPool
+Executors.newScheduledThreadPool(4);
+
+4) singleThread
+Executors.newSingleThreadExecutor()
+if Thread inside will be killed --> will create new Thread
